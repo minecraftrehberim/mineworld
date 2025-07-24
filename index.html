@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MineWorld - Kapsamlı Minecraft Rehberi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=M+PLUS+Rounded+1c:wght@800&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-green: #5E8C4A; --dark-soil: #6B4F38; --stone-gray: #A9A9A9; --dark-stone: #4A464A; --diamond-blue: #6AE6E6; --lapis-blue: #0048BA; --redstone-red: #D9534F; --potion-purple: #8A2BE2; --background-light: #ffffff; --background-dark: #2C2C2C; --text-light: #E5E5E5; --text-dark: #222222; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--background-dark); color: var(--text-light); line-height: 1.7; margin: 0; padding: 0; position: relative; overflow-x: hidden; }
+        .disclaimer-banner { background-color: #ffc107; color: #000; text-align: center; padding: 10px; font-size: 0.9rem; font-weight: bold; }
+        body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-repeat: repeat; background-size: 200px 200px; opacity: 0.05; animation: creeperAndEnderman 120s linear infinite; }
+        @keyframes creeperAndEnderman {
+            0%, 48% { background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48ZyBmaWxsPSIjMDBhODAwIj48cmVjdCB3aWR0aD0iMjUiIGhlaWdodD0iMjUiIHg9IjE4IiB5PSIxOCIvPjxyZWN0IHdpZHRoPSIyNSIgaGVpZ2h0PSIyNSIgeD0iNTciIHk9IjE4Ii8+PHJlY3Qgd2lkdGg9IjI1IiBoZWlnaHQ9IjI1IiB4PSIzNy41IiB5PSI0MyIvPjxyZWN0IHdpZHRoPSIxMi41IiBoZWlnaHQ9IjI1IiB4PSIyNSIgeT0iNTUuNSIvPjxyZWN0IHdpZHRoPSIxMi41IiBoZWlnaHQ9IjI1IiB4PSI2Mi41IiB5PSI1NS41Ii8+PC9nPjwvc3ZnPg=='); opacity: 0.05; }
+            50% { opacity: 0; }
+            52%, 100% { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGc+PHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9IiMwMDAiLz48cmVjdCB4PSIxNSIgeT0iNDAiIHdpZHRoPSIzMCIgaGVpZ2h0PSIxMCIgZmlsbD0iI0Q5MDBFRCIvPjxyZWN0IHg9IjU1IiB5PSI0MCIgd2lkdGg9IjMwIiBoZWlnaHQ9IjEwIiBmaWxsPSIjRDkwMEVEIi8+PC9nPjwvc3ZnPg=='); opacity: 0.05; }
+        }
+        .author-info { position: absolute; top: 15px; right: 20px; font-size: 0.9rem; color: white; opacity: 0.7; font-style: italic; text-shadow: 1px 1px 2px #000; }
+        header { background-color: var(--primary-green); background-image: linear-gradient(to bottom, #7DB86A, var(--primary-green)); color: white; padding: 2.5rem 1.5rem; text-align: center; border-bottom: 12px solid var(--dark-soil); text-shadow: 3px 3px 5px rgba(0,0,0,0.5); position: relative; }
+        .about-arrow { position: absolute; top: 50%; right: 40px; transform: translateY(-50%); width: 50px; height: 50px; background-color: rgba(255, 255, 255, 0.1); border: 2px solid rgba(255, 255, 255, 0.5); border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: white; font-size: 2rem; transition: all 0.3s ease; }
+        .about-arrow:hover { background-color: rgba(255, 255, 255, 0.2); transform: translateY(-50%) scale(1.1); border-color: white; }
+        header h1 { font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 4rem; margin: 0; letter-spacing: 1px; }
+        .nav-wrapper { background: var(--dark-stone); padding: 0.5rem 1rem; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 8px rgba(0,0,0,0.3); display: flex; justify-content: center; align-items: center; flex-wrap: wrap; }
+        nav { text-align: center; white-space: nowrap; overflow-x: auto; }
+        nav a { font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; color: white; text-decoration: none; padding: 1rem 1.2rem; transition: background-color 0.2s, color 0.2s; font-size: 1rem; display: inline-block; }
+        nav a:hover { background: var(--diamond-blue); color: var(--dark-stone); }
+        .search-container { margin-left: 20px; }
+        #searchInput { padding: 8px 12px; border-radius: 20px; border: 2px solid #555; background-color: #333; color: white; font-size: 0.9rem; }
+        .container { width: 90%; max-width: 1200px; margin: auto; padding: 2.5rem 0; }
+        .section { padding-top: 70px; margin-top: -70px; margin-bottom: 2rem; }
+        .section-title { font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 2.8rem; color: var(--diamond-blue); text-align: center; margin-bottom: 2.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); display: flex; align-items: center; justify-content: center; }
+        .section-title::before { content: ''; display: inline-block; width: 18px; height: 18px; background-color: var(--diamond-blue); margin-right: 15px; transform: rotate(45deg); opacity: 0.8; }
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
+        .item-card { background: var(--background-light); color: var(--text-dark); border: 2px solid #ddd; border-radius: 8px; padding: 1.5rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; display: flex; flex-direction: column; }
+        .item-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); border-color: var(--primary-green); }
+        .item-card h3 { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.4rem; color: var(--lapis-blue); margin-top: 0; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; }
+        .item-card p { flex-grow: 1; }
+        .food-stats, .enchant-applicability { background-color: #f0f8ff; border-left: 5px solid; padding: 10px 15px; margin-top: 1rem; border-radius: 4px; font-size: 0.9rem; }
+        .food-stats { border-color: var(--redstone-red); }
+        .enchant-applicability { border-color: var(--lapis-blue); }
+        .info-section { background: var(--background-light); color: var(--text-dark); border: 2px solid var(--stone-gray); border-radius: 8px; padding: 2rem; margin-bottom: 2.5rem; }
+        .info-section .section-title { color: var(--primary-green); text-align: left; font-size: 2.2rem; justify-content: flex-start; }
+        .info-section h3 { font-family: 'Inter', sans-serif; font-weight: 700; color: var(--lapis-blue); margin-top: 2rem; border-bottom: 1px solid #ccc; padding-bottom: 0.3rem; }
+        .info-section ul { list-style-type: '✔ '; padding-left: 20px; }
+        .mob-section { margin-bottom: 3rem; }
+        .mob-section h3 { font-size: 1.5rem; color: var(--primary-green); border-bottom: 2px solid #eee; padding-bottom: 0.5rem; }
+        .comment-section { background-color: #fff; color: var(--text-dark); padding: 2rem; border-radius: 8px; }
+        .comment-form { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem; }
+        .comment-form input, .comment-form textarea { width: 100%; padding: 0.8rem; border-radius: 5px; border: 1px solid #ccc; font-family: 'Inter', sans-serif; font-size: 1rem; box-sizing: border-box; }
+        .comment-form button { align-self: flex-start; padding: 0.8rem 1.5rem; border: none; background-color: var(--primary-green); color: white; font-weight: bold; border-radius: 5px; cursor: pointer; transition: background-color 0.2s; }
+        .comment-form button:hover { background-color: #4a7a3a; }
+        .comment-list .comment-card { background-color: #f9f9f9; border: 1px solid #eee; padding: 1rem; border-radius: 5px; margin-bottom: 1rem; }
+        .comment-author { font-weight: bold; color: var(--lapis-blue); }
+        .comment-date { font-size: 0.8rem; color: #888; margin-bottom: 0.5rem; }
+    </style>
+</head>
+<body>
+
+    <div class="disclaimer-banner">
+        Bu site Mojang ya da Microsoft ile resmi olarak bağlantılı değildir. Minecraft, Mojang Studios’un tescilli markasıdır.
+    </div>
+
+    <header>
+        <div class="author-info">Ömer Tuğra Tarafından</div>
+        <h1>MineWorld</h1>
+        <p>Kapsamlı Minecraft Rehberi</p>
+        <a href="hakkimda.html" class="about-arrow" title="Hakkımda Sayfası">→</a>
+    </header>
+
+    <div class="nav-wrapper">
+        <nav>
+            <a href="#baslangic">Başlangıç</a>
+            <a href="#madenler">Madenler</a>
+            <a href="#yemekler">Yemekler</a>
+            <a href="hakkimda.html#iksirler">İksirler</a>
+            <a href="#moblar">Moblar</a>
+            <a href="#farmlar">Farmlar</a>
+            <a href="#zirhlar">Zırhlar</a>
+            <a href="#buyuler">Büyüler</a>
+            <a href="#esyalar">Eşyalar</a>
+            <a href="#yorumlar">Yorumlar</a>
+            <a href="guncellemeler.html">Güncellemeler</a>
+        </nav>
+        <div class="search-container">
+            <input type="search" id="searchInput" placeholder="Sitede Ara...">
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div id="baslangic" class="section info-section">
+            <h2 class="section-title">Yeni Başlayanlar İçin Dev Rehber</h2>
+            <h3>Bölüm 1: İlk Gün Hayatta Kalma</h3>
+            <ul>
+                <li><strong>Ağaç Kesmek:</strong> İlk işin etrafındaki ağaçlara yumruk atarak odun toplamak olmalı. 5-10 odun kütüğü yeterlidir.</li>
+                <li><strong>Çalışma Masası:</strong> Envanterini aç (E tuşu), topladığın odunları meşe tahtasına çevir. 4 meşe tahtası ile bir Çalışma Masası yap.</li>
+                <li><strong>İlk Aletler:</strong> Çalışma masasını yere koy. Tahtaları kullanarak çubuk yap. Çubuk ve tahtalarla ilk kazmanı, baltanı ve kılıcını üret.</li>
+                <li><strong>İlk Sığınak:</strong> Gece olmadan küçük bir sığınak bul veya yap. Bir dağın kenarını oymak veya topraktan küçük bir kulübe yapmak en hızlı yoldur.</li>
+                <li><strong>Yatak Yapımı:</strong> Etrafta 3 tane aynı renk yün bulabilirsen, 3 tahta ile birleştirip yatak yap. Yatak, geceyi atlamanı sağlar.</li>
+            </ul>
+            <h3>Bölüm 2: Madencilik ve Kaynaklar</h3>
+            <ul>
+                <li><strong>Kömür ve Meşale:</strong> Yüzeydeki mağara girişlerinde veya dağ yamaçlarında kömür ara. Kömür ve çubuk ile meşale yap.</li>
+                <li><strong>Demir Çağı:</strong> Mağaralarda demir (turuncu-kahverengi benekli) ara. En az 3 demir bulup fırında eriterek bir demir kazma yap.</li>
+                <li><strong>Fırın ve Sandık:</strong> 8 kırıktaş ile bir fırın, 8 tahta ile bir sandık yap. Fırın madenleri eritmeni, sandık ise eşyalarını saklamanı sağlar.</li>
+                <li><strong>İlk Elmas Macerası:</strong> Demir zırh setin olduğunda, Y=-59'a doğru dikkatlice kazarak in. Yanına bolca meşale, yemek ve yedek kazma al!</li>
+            </ul>
+        </div>
+        
+        <div id="madenler" class="section">
+            <h2 class="section-title">Madenler ve Kullanım Alanları</h2>
+            <div class="grid-container">
+                <div class="item-card"><h3>1. Kömür</h3><p><strong>En İyi Yükseklik: Y=95.</strong> Oyunun başındaki en temel yakıttır. Meşale yapımında, madenleri eritmek ve yemek pişirmek için kullanılır.</p></div>
+                <div class="item-card"><h3>2. Demir</h3><p><strong>En İyi Yükseklik: Y=15.</strong> Temel aletler, zırhlar ve sayısız mekanik eşya için en kritik madendir. Kova, kalkan, örs gibi eşyalar demir olmadan yapılamaz.</p></div>
+                <div class="item-card"><h3>3. Elmas</h3><p><strong>En İyi Yükseklik: Y=-59.</strong> En dayanıklı alet ve zırhlar için gereklidir. Netherite'a giden yol elmastan geçer.</p></div>
+                <div class="item-card"><h3>4. Redstone</h3><p><strong>En İyi Yükseklik: Y=-59.</strong> Otomatik sistemler ve makineler için kullanılır. Minecraft'ın elektriği olarak kabul edilir.</p></div>
+                <div class="item-card"><h3>5. Altın</h3><p><strong>En İyi Yükseklik: Y=-16.</strong> Güçlü raylar, altın elma ve Piglin takasları için önemlidir. Badlands biyomunda yüzeyde de bulunur.</p></div>
+                <div class="item-card"><h3>6. Lapis Lazuli</h3><p><strong>En İyi Yükseklik: Y=0.</strong> Büyü masasında eşyalarınıza büyü basmak için kullanılır. Mavi boya kaynağıdır.</p></div>
+                <div class="item-card"><h3>7. Zümrüt</h3><p><strong>En İyi Yükseklik: Y=232 (Dağ Biyomları).</strong> Köylülerle ticaret yapmak için kullanılan para birimidir. Madencilikle bulunması zordur.</p></div>
+                <div class="item-card"><h3>8. Bakır</h3><p><strong>En İyi Yükseklik: Y=48.</strong> Esas olarak dekoratif bloklar yapmak için kullanılır. Bakır bloklar zamanla oksitlenerek yeşile döner.</p></div>
+                <div class="item-card"><h3>9. Nether Kuvarsı</h3><p><strong>Nether'da bulunur (Y=10-117).</strong> Redstone bileşenleri için gereklidir ve iyi bir deneyim (XP) kaynağıdır.</p></div>
+                <div class="item-card"><h3>10. Antik Kalıntı</h3><p><strong>Nether'da bulunur (En iyi Y=15).</strong> Fırında eritilerek Netherite Hurdası elde edilir ve Netherite Külçesi yapılır.</p></div>
+                <div class="item-card"><h3>11. Ametist</h3><p><strong>Ametist Kürelerinde bulunur (Y=-64 ile Y=30 arası).</strong> Dürbün ve Renkli Cam yapımında kullanılır.</p></div>
+                <div class="item-card"><h3>12. Kil</h3><p><strong>Nehir ve göl yataklarında bulunur.</strong> Fırında pişirilerek Tuğla elde edilir. Saksı ve dekoratif tuğla blokları yapmak için kullanılır.</p></div>
+                <div class="item-card"><h3>13. Çakıl (Gravel)</h3><p><strong>Her yerde bulunur.</strong> Kırıldığında küçük bir şansla Çakmaktaşı (Flint) düşürür. Ok ve çakmak yapımı için gereklidir.</p></div>
+                <div class="item-card"><h3>14. Kum</h3><p><strong>Çöl ve plajlarda bulunur.</strong> Fırında eritilerek cama dönüştürülür. Beton ve TNT yapımında da kullanılır.</p></div>
+                <div class="item-card"><h3>15. Derin Kayrak</h3><p><strong>Y=0'ın altında bulunur.</strong> Normal taşın yerini alan daha sert bir bloktur ve harika dekoratif blok setleri sunar.</p></div>
+            </div>
+        </div>
+
+        <div id="yemekler" class="section">
+            <h2 class="section-title">En İyi Yemekler</h2>
+            <div class="grid-container">
+                <div class="item-card"><h3>1. Altın Havuç</h3><p>Oyundaki en yüksek doygunluk (saturation) değerine sahip gıdadır. Bu, açlık barınızın çok daha yavaş düşmesini sağlar.</p><div class="food-stats"><strong>Doyurma:</strong> 6 | <strong>Doygunluk:</strong> 14.4</div></div>
+                <div class="item-card"><h3>2. Biftek / Pişmiş Domuz Pirzolası</h3><p>En verimli ve kolay elde edilebilir temel gıdalardır. Yüksek açlık ve doygunluk sağlamaları, onları en güvenilir seçenek yapar.</p><div class="food-stats"><strong>Doyurma:</strong> 8 | <strong>Doygunluk:</strong> 12.8</div></div>
+                <div class="item-card"><h3>3. Altın Elma</h3><p>Sadece açlığı gidermekle kalmaz, aynı zamanda Rejenerasyon ve Absorpsiyon etkileri verir. Savaşlarda hayat kurtarır.</p><div class="food-stats"><strong>Doyurma:</strong> 4 | <strong>Doygunluk:</strong> 9.6</div></div>
+                <div class="item-card"><h3>4. Pişmiş Koyun Eti</h3><p>Biftek kadar doyurucu olmasa da iyi bir alternatiftir. Koyunlar yün için de kullanıldığından genellikle daha az tercih edilir.</p><div class="food-stats"><strong>Doyurma:</strong> 6 | <strong>Doygunluk:</strong> 9.6</div></div>
+                <div class="item-card"><h3>5. Pişmiş Somon</h3><p>Balıkçılıkla kolayca elde edilebilir ve doyuruculuğu oldukça yüksektir. Okyanus kenarında yaşayanlar için harika bir besindir.</p><div class="food-stats"><strong>Doyurma:</strong> 6 | <strong>Doygunluk:</strong> 9.6</div></div>
+                <div class="item-card"><h3>6. Şüpheli Güveç</h3><p>İçine konulan çiçeğe göre farklı etkiler verir. Doygunluk veren çiçekle yapıldığında en iyi yiyecek olabilir ama istiflenemez.</p><div class="food-stats"><strong>Doyurma:</strong> 6 | <strong>Doygunluk:</strong> 7.2 + Efekt</div></div>
+                <div class="item-card"><h3>7. Pişmiş Tavuk</h3><p>Yaygın bir yiyecektir ancak biftek kadar verimli değildir. Tavuk farmları sayesinde kolayca otomatikleştirilebilir.</p><div class="food-stats"><strong>Doyurma:</strong> 6 | <strong>Doygunluk:</strong> 7.2</div></div>
+                <div class="item-card"><h3>8. Pancar Çorbası</h3><p>6 pancar ve bir kase ile yapılır. İstiflenemez olması en büyük dezavantajıdır. Acil durumlar için bir seçenektir.</p><div class="food-stats"><strong>Doyurma:</strong> 6 | <strong>Doygunluk:</strong> 7.2</div></div>
+                <div class="item-card"><h3>9. Fırında Patates</h3><p>Köylerden veya zombilerden elde edilen patateslerle kolayca üretilir. Ekmek ile aynı değerlere sahiptir ve tarımı basittir.</p><div class="food-stats"><strong>Doyurma:</strong> 5 | <strong>Doygunluk:</strong> 6.0</div></div>
+                <div class="item-card"><h3>10. Ekmek</h3><p>Büyük buğday tarlaları kurularak bolca üretilebilir. Oyunun erken aşamaları için güvenilir bir besin kaynağıdır.</p><div class="food-stats"><strong>Doyurma:</strong> 5 | <strong>Doygunluk:</strong> 6.0</div></div>
+                <div class="item-card"><h3>11. Pişmiş Morina</h3><p>En yaygın balık türüdür. Çok doyurucu olmasa da kolayca bulunur ve hayatta kalmak için yeterlidir.</p><div class="food-stats"><strong>Doyurma:</strong> 5 | <strong>Doygunluk:</strong> 6.0</div></div>
+                <div class="item-card"><h3>12. Balkabağı Turtası</h3><p>Balkabağı, şeker ve yumurta ile yapılır. İstiflenebilir ve iyi bir açlık puanı verir ancak doygunluğu düşüktür.</p><div class="food-stats"><strong>Doyurma:</strong> 8 | <strong>Doygunluk:</strong> 4.8</div></div>
+                <div class="item-card"><h3>13. Havuç</h3><p>Çiğ olarak yenebilir ve tarımı kolaydır. Domuzları ve tavşanları beslemek için de kullanılır. Altın havuç yapımının temelidir.</p><div class="food-stats"><strong>Doyurma:</strong> 3 | <strong>Doygunluk:</strong> 3.6</div></div>
+                <div class="item-card"><h3>14. Tatlı Orman Meyveleri</h3><p>Taiga biyomlarında bulunur ve hızlı bir atıştırmalıktır. Toplarken hasar verebilir. Tilkileri beslemek için kullanılır.</p><div class="food-stats"><strong>Doyurma:</strong> 2 | <strong>Doygunluk:</strong> 0.4</div></div>
+                <div class="item-card"><h3>15. Kurutulmuş Kelp</h3><p>En hızlı yenen yiyecektir ancak çok az doyurur. Genellikle yakıt olarak veya kompost yapmak için kullanılır.</p><div class="food-stats"><strong>Doyurma:</strong> 1 | <strong>Doygunluk:</strong> 0.6</div></div>
+            </div>
+        </div>
+
+        <div id="moblar" class="section">
+            <h2 class="section-title">Moblar ve Boyutları</h2>
+            <div class="mob-section">
+                <h3>Dünya (Overworld) Mobları</h3>
+                <div class="grid-container">
+                    <div class="item-card"><h3>1. Zombi</h3><p>Geceleri ortaya çıkan en yaygın düşmandır. Yakın mesafeden saldırır. Nadiren demir, havuç veya patates düşürebilir.</p></div>
+                    <div class="item-card"><h3>2. İskelet</h3><p>Yay ile uzaktan saldırır. Ok ve kemik kaynağıdır. Güneş ışığında yanar. Köpeğinizin en büyük düşmanıdır.</p></div>
+                    <div class="item-card"><h3>3. Creeper</h3><p>Sessizce yaklaşıp patlar. Barut kaynağıdır ve en ikonik düşmandır. Kedilerden korkar, bu bilgi üssünüzü korumak için kritiktir.</p></div>
+                    <div class="item-card"><h3>4. Köylü</h3><p>Ticaretin temelidir. Meslek bloğu vererek onlara uzmanlık kazandırabilir ve zümrüt karşılığında değerli eşyalar alabilirsiniz.</p></div>
+                    <div class="item-card"><h3>5. Demir Golem</h3><p>Köyleri korur ve oyuncu tarafından da yapılabilir. Güçlü bir yandaştır ve demir farm'larının ana kaynağıdır.</p></div>
+                    <div class="item-card"><h3>6. İnek</h3><p>Et, deri ve süt kaynağıdır. Deri, kitap ve zırh yapımı için gereklidir. Buğday ile beslenerek çoğaltılırlar.</p></div>
+                    <div class="item-card"><h3>7. Koyun</h3><p>Yünleri için kırpılırlar. Yün, yatak ve dekorasyon için kullanılır. Renkli yünler için boyanabilirler.</p></div>
+                    <div class="item-card"><h3>8. Domuz</h3><p>En iyi yiyecek kaynaklarından biridir. Havuç, patates veya pancarla beslenirler. Eyer takılarak binilebilir.</p></div>
+                    <div class="item-card"><h3>9. Örümcek</h3><p>Duvarlara tırmanabilir. Geceleri saldırgan, gündüzleri tarafsızdır. İp ve örümcek gözü düşürür, bunlar yay ve iksir yapımında kullanılır.</p></div>
+                    <div class="item-card"><h3>10. Enderman</h3><p>Gözüne bakılmadıkça saldırmaz. Işınlanabilir ve blokları taşıyabilir. Ender İncisi düşürür, bu da End'e gitmek için gereklidir.</p></div>
+                    <div class="item-card"><h3>11. Cadı</h3><p>Zehir, yavaşlatma gibi negatif etkili iksirler fırlatır. Öldürüldüğünde cam şişe, barut, redstone gibi iksir malzemeleri düşürebilir.</p></div>
+                    <div class="item-card"><h3>12. Yağmacı (Pillager)</h3><p>Arbaletle saldıran düşmanlardır. Karakollarında veya devriyelerde bulunurlar. Kaptanlarını öldürmek "Köyün Kötü Ozanı" etkisini verir.</p></div>
+                    <div class="item-card"><h3>13. Kurt</h3><p>Kemikle evcilleştirilebilen sadık bir yoldaştır. Saldırdığınız hedeflere saldırır. Zırh giydirilerek daha dayanıklı hale getirilebilir.</p></div>
+                    <div class="item-card"><h3>14. At</h3><p>Hızlı seyahat için en iyi bineklerdir. Farklı hız, sağlık ve zıplama yeteneklerine sahip olabilirler. Eyer ve zırh takılabilir.</p></div>
+                    <div class="item-card"><h3>15. Fantom (Phantom)</h3><p>Üç veya daha fazla oyun günü uyumayan oyuncuların üzerine saldırır. Düşürdüğü Fantom Zarı, Elytra'yı tamir etmek için kullanılır.</p></div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="farmlar" class="section">
+            <h2 class="section-title">En İyi 15 Farm</h2>
+            <div class="grid-container">
+                <div class="item-card"><h3>1. Demir Golem Farmı</h3><p>Oyunun her aşamasında kritik olan demir ihtiyacını karşılar. Köylüleri korkutan bir zombiyle sürekli demir golem doğurtup otomatik demir kaynağı sağlar.</p></div>
+                <div class="item-card"><h3>2. Enderman XP Farmı</h3><p>Oyundaki en hızlı deneyim (XP) kazandıran farmlardan biridir. Eşyalarınızdaki Tamir büyüsünü beslemek ve seviye atlamak için mükemmeldir.</p></div>
+                <div class="item-card"><h3>3. Baskın (Raid) Farmı</h3><p>Sınırsız zümrüt, totem ve değerli büyülü kitaplar elde etmek için en etkili yöntemdir. Oyun sonu zenginliğinin anahtarıdır.</p></div>
+                 <div class="item-card"><h3>4. Wither İskeleti Farmı</h3><p>Nether kalelerinde inşa edilir. Beacon yapmak için gereken Wither iskeleti kafalarını ve kömür/kemik toplamak için en verimli yoldur.</p></div>
+                <div class="item-card"><h3>5. Barut (Gunpowder) Farmı</h3><p>Elytra ile uçmak için gereken havai fişeklerin ve TNT'nin hammaddesi olan barutu sağlar. Genellikle kedilerle Creeper'lar korkutularak yapılır.</p></div>
+                <div class="item-card"><h3>6. Koruyucu (Guardian) Farmı</h3><p>Okyanus anıtlarında kurulur. Yüksek miktarda XP, prizmarin kristalleri ve balık sağlar. İnşaası zor, getirisi çok yüksektir.</p></div>
+                <div class="item-card"><h3>7. Hoglin Farmı</h3><p>Nether'ın Kızıl Orman biyomunda yaşayan Hoglin'leri kullanarak otomatik bir yemek kaynağı oluşturur.</p></div>
+                <div class="item-card"><h3>8. Altın (Gold) Farmı</h3><p>Genellikle Nether çatısının üzerine inşa edilir. Zombileşmiş Piglin'leri doğurup bir tuzağa düşürerek altın külçeleri elde etmeyi sağlar.</p></div>
+                <div class="item-card"><h3>9. Otomatik Ağaç Farmı</h3><p>TNT kopyalama mekanizmaları veya Wither kullanarak ağaçları otomatik olarak kırar ve odunları toplar.</p></div>
+                <div class="item-card"><h3>10. Köylü Çoğaltıcı</h3><p>Ticaret merkezleri ve demir farmları için gerekli olan köylü nüfusunu artırmak için kullanılır.</p></div>
+                <div class="item-card"><h3>11. Sculk XP Farmı</h3><p>Derin Karanlık biyomunda bulunan Sculk Katalizörlerini kullanır. Güvenli ve otomatik bir XP kaynağıdır.</p></div>
+                <div class="item-card"><h3>12. Otomatik Yün Farmı</h3><p>Gözlemci bloğunun bir koyunun çimen yediğini algılamasıyla Kırpıcı'yı çalıştıran basit bir farmdır.</p></div>
+                <div class="item-card"><h3>13. Bal ve Petek Farmı</h3><p>Arı kovanlarının altına kamp ateşi ve dağıtıcı koyarak otomatik olarak bal ve petek toplar.</p></div>
+                <div class="item-card"><h3>14. Otomatik İksir Yapıcı</h3><p>Redstone ve huni sistemleriyle, malzemeleri otomatik olarak damıtma standlarına yükleyerek seri üretim iksir yapmanızı sağlar.</p></div>
+                <div class="item-card"><h3>15. Yosun (Moss) Farmı</h3><p>Kemik tozu ile yosun bloklarını çoğaltıp pistonlarla otomatik olarak kırarak kompost malzemesi elde etmeyi sağlar.</p></div>
+            </div>
+        </div>
+        
+        <div id="zirhlar" class="section">
+            <h2 class="section-title">En İyi Zırh ve Ekipmanlar</h2>
+            <div class="grid-container">
+                <div class="item-card"><h3>1. Netherite Zırh Seti</h3><p>Oyunun mutlak en iyi zırhıdır. Elmas zırhtan daha fazla koruma, dayanıklılık ve geri tepme direnci sunar. En büyük avantajı lavda yanmamasıdır.</p></div>
+                <div class="item-card"><h3>2. Elmas Zırh Seti</h3><p>Netherite'a geçmeden önceki standart en iyi zırhtır. Mükemmel koruma sağlar ve iyi büyülerle oyun sonuna kadar kullanılabilir.</p></div>
+                <div class="item-card"><h3>3. Elytra</h3><p>Teknik olarak zırh olmasa da göğüslük yuvasına takılır. Havai fişeklerle birleştiğinde size uçma özgürlüğü tanır ve oyundaki en iyi ulaşım aracıdır.</p></div>
+                <div class="item-card"><h3>4. Kaplumbağa Kabuğu</h3><p>Bir kasktır. Giyildiğinde oyuncuya 10 saniye boyunca "Su Altında Nefes Alma" etkisi verir. Okyanus keşiflerini ve su altı inşaatlarını çok kolaylaştırır.</p></div>
+                <div class="item-card"><h3>5. Tam Koruma IV Zırh</h3><p>Her bir zırh parçasına Koruma IV büyüsünün basıldığı settir. Bu, özel korumalardan daha fazla genel hasar azaltması sağlar ve en ideal savunma kurulumudur.</p></div>
+                <div class="item-card"><h3>6. Tüy Düşüşü IV Botlar</h3><p>Düşme hasarını %80'e kadar azaltır. Dağlık alanlarda veya Elytra ile uçarken kaza yaptığınızda hayat kurtaran, olmazsa olmaz bir büyüdür.</p></div>
+                <div class="item-card"><h3>7. Derinlik Koşucusu III Botlar</h3><p>Su altındayken hareket hızınızı karadaymış gibi artırır. Okyanus anıtlarını yağmalarken veya su altında madencilik yaparken zaman kazandırır.</p></div>
+                <div class="item-card"><h3>8. Altın Kask (Nether İçin)</h3><p>Nether'da bir parça altın zırh giymek Piglin'lerin size saldırmasını engeller. En pratik olanı kasktır.</p></div>
+                <div class="item-card"><h3>9. Dikenler III Zırh</h3><p>Size saldıran düşmanlara geri hasar verme şansı tanır. Tamir büyüsü ile birlikte kullanılmalıdır, çünkü dayanıklılığı hızla tüketir.</p></div>
+                <div class="item-card"><h3>10. Buz Yürüyen II Botlar</h3><p>Su üzerinde yürüdüğünüzde suyu geçici olarak buza dönüştürür. Nehirleri ve gölleri geçmek için pratiktir.</p></div>
+                <div class="item-card"><h3>11. Kurt Zırhı</h3><p>Armadillo'dan elde edilen parçalarla yapılır ve evcil kurdunuza giydirilir. Kurdunuzu savaşlarda çok daha dayanıklı bir yoldaş haline getirir.</p></div>
+                <div class="item-card"><h3>12. Demir Zırh Seti</h3><p>Oyunun erken ve orta aşamaları için en güvenilir zırhtır. Kolayca üretilir ve elmas bulana kadar yeterlidir.</p></div>
+                <div class="item-card"><h3>13. At Zırhı (Elmas)</h3><p>Atınıza giydirilir ve onu düşman saldırılarından korur. Atınızın hayatta kalma şansını artırır.</p></div>
+                <div class="item-card"><h3>14. Solungaç III Kask</h3><p>Su altında nefes alma süresini ciddi şekilde uzatan bir kask büyüsüdür. Keşif imkanını artırır.</p></div>
+                <div class="item-card"><h3>15. Alev Koruması IV Zırh</h3><p>Özellikle Nether'da kullanışlıdır. Ateş ve lavdan alınan hasarı büyük ölçüde azaltır.</p></div>
+            </div>
+        </div>
+
+        <div id="buyuler" class="section">
+            <h2 class="section-title">En İyi Büyüler</h2>
+            <div class="grid-container">
+                <div class="item-card"><h3>1. Tamir (Mending)</h3><p>Deneyim puanı (XP) topladıkça eşyaları onarır. Oyundaki en değerli büyüdür, çünkü Netherite gibi değerli eşyaların kırılmasını tamamen engeller.</p><div class="enchant-applicability"><strong>Uygulanabilirlik:</strong> Dayanıklılığı olan tüm eşyalar.</div></div>
+                <div class="item-card"><h3>2. Kırılmazlık</h3><p>Eşyanın dayanıklılığını kaybetme şansını azaltır. Seviye III'te bir eşya yaklaşık dört kat daha uzun ömürlü olur. Tamir ile birleştiğinde eşyalarınızı ölümsüz yapar.</p><div class="enchant-applicability"><strong>Uygulanabilirlik:</strong> Dayanıklılığı olan tüm eşyalar.</div></div>
+                <div class="item-card"><h3>3. Servet (Fortune)</h3><p>Elmas, kömür gibi madenleri kırdığınızda daha fazla ürün düşmesini sağlar. Madencilikte verimliliği katlayarak arttıran kritik bir büyüdür.</p><div class="enchant-applicability"><strong>Uygulanabilirlik:</strong> Kazma, Balta, Kürek.</div></div>
+                <div class="item-card"><h3>4. Verimlilik</h3><p>Aletlerin blokları kırma hızını artırır. Seviye V, özellikle taş veya Netherrack gibi blokları anında kırmanızı sağlar. Zaman en değerli kaynaktır.</p><div class="enchant-applicability"><strong>Uygulanabilirlik:</strong> Kazma, Balta, Kürek, Çapa, Kırpıcı.</div></div>
+                <div class="item-card"><h3>5. Koruma</h3><p>Her türlü hasara karşı genel bir koruma sağlar. Diğer özel korumalara göre daha çok yönlü olduğu için genellikle en çok tercih edilen zırh büyüsüdür.</p><div class="enchant-applicability"><strong>Uygulanabilirlik:</strong> Tüm zırh parçaları.</div></div>
+                <div class="item-card"><h3>6. Ganimet (Looting)</h3><p>Öldürülen mob'lardan düşen eşya sayısını ve nadir eşya düşürme şansını artırır. Wither iskeleti kafası gibi eşyaları farmlarken çok etkilidir.</p><div class="enchant-applicability"><strong>Uygulanabilirlik:</strong> Kılıç.</div></div>
+                <div class="item-card"><h3>7. Keskinlik</h3><p>Kılıç ve baltaların yakın dövüş hasarını önemli ölçüde artırır. En iyi genel hasar büyüsüdür.</p><div class="enchant-applicability"><strong>Uygulanabilirlik:</strong> Kılıç, Balta.</div></div>
+                <div class="item-card"><h3>8. Güç (Power)</h3><p>Yayların verdiği hasarı artırır. Uzak mesafeli savaşlar için temel büyüdür.</p><div class="enchant-applicability"><strong>Uygulanabilirlik:</strong> Yay.</div></div>
+                <div class="item-card"><h3>9. Sonsuzluk</h3><p>Envanterinizde tek bir ok varken sonsuz ok atmanızı sağlar. Tamir ile aynı yaya basılamaz.</p><div class="enchant-applicability"><strong>Uygulanabilirlik:</strong> Yay.</div></div>
+                <div class="item-card"><h3>10. Tüy Düşüşü</h3><p>Düşme hasarını büyük ölçüde azaltır. Her oyuncunun botunda olması gereken bir güvenlik büyüsüdür.</p><div class="enchant-applicability"><strong>Uygulanabilirlik:</strong> Bot.</div></div>
+                <div class="item-card"><h3>11. İpeksi Dokunuş</h3><p>Blokları kırdığınızda, kendilerini olduğu gibi düşürür (taş, cam, cevher vb.). Servet ile aynı alete basılamaz.</p><div class="enchant-applicability"><strong>Uygulanabilirlik:</strong> Kazma, Balta, Kürek, Çapa.</div></div>
+                <div class="item-card"><h3>12. Akıntı (Riptide)</h3><p>Üç Uçlu Mızrak'ı su içindeyken veya yağmurda fırlatınca sizi de ileri atar. Hızlı bir seyahat yöntemidir.</p><div class="enchant-applicability"><strong>Uygulanabilirlik:</strong> Üç Uçlu Mızrak.</div></div>
+                <div class="item-card"><h3>13. Sadakat (Loyalty)</h3><p>Fırlatılan bir Üç Uçlu Mızrak'ın sahibine geri dönmesini sağlar.</p><div class="enchant-applicability"><strong>Uygulanabilirlik:</strong> Üç Uçlu Mızrak.</div></div>
+                <div class="item-card"><h3>14. Hızlı Çekme</h3><p>Arbaletin (Crossbow) dolum süresini kısaltır. Savaşı daha pratik hale getirir.</p><div class="enchant-applicability"><strong>Uygulanabilirlik:</strong> Arbalet.</div></div>
+                <div class="item-card"><h3>15. Delme (Piercing)</h3><p>Arbaletten atılan okun birden fazla düşmanın içinden geçmesini ve kalkanları delmesini sağlar.</p><div class="enchant-applicability"><strong>Uygulanabilirlik:</strong> Arbalet.</div></div>
+            </div>
+        </div>
+
+        <div id="esyalar" class="section">
+            <h2 class="section-title">En İyi Eşyalar</h2>
+            <div class="grid-container">
+                <div class="item-card"><h3>1. Elytra</h3><p>Oyundaki en dönüştürücü eşyadır. Uçmanıza ve dünyayı inanılmaz bir hızla keşfetmenize olanak tanır. End şehirlerindeki gemilerde bulunur.</p></div>
+                <div class="item-card"><h3>2. Shulker Kutusu</h3><p>Taşınabilir bir sandıktır. Envanter kapasitesini 27 katına çıkarır ve büyük projeler için malzeme taşımayı kolaylaştırır.</p></div>
+                <div class="item-card"><h3>3. Üç Uçlu Mızrak</h3><p>Hem yakın dövüş hem de menzilli bir silahtır. Akıntı büyüsüyle süper hızlı bir seyahat aracına dönüşebilir.</p></div>
+                <div class="item-card"><h3>4. Ölümsüzlük Totemi</h3><p>Elinizde tutarken ölmenizi engeller. Özellikle boss savaşlarında ve Hardcore modunda paha biçilmezdir.</p></div>
+                <div class="item-card"><h3>5. İşaretçi (Beacon)</h3><p>Wither'dan düşen Nether Yıldızı ile yapılır. Etki alanındaki oyunculara Hız, Acele gibi kalıcı efektler verir.</p></div>
+                <div class="item-card"><h3>6. Ender Sandığı</h3><p>İçine konulan eşyalara her Ender Sandığı'ndan erişilebilir. Değerli eşyalarınızı güvende tutmak için idealdir.</p></div>
+                <div class="item-card"><h3>7. Netherite Kazma</h3><p>En yüksek seviye kazmadır. İnanılmaz hızlıdır ve lavda yanmaz. Servet ve Verimlilik büyüleriyle mükemmel bir alete dönüşebilir.</p></div>
+                <div class="item-card"><h3>8. Su Kovası</h3><p>Minecraft'taki en çok yönlü ve hayat kurtaran eşyadır. Yüksekten düşüşü engeller, lavı söndürür, ekinleri sular.</p></div>
+                <div class="item-card"><h3>9. Havai Fişek Roketi</h3><p>Elytra ile uçmak için temel "yakıt"tır. Uçuş sırasında kullanıldığında oyuncuya itki verir ve uzun mesafeler kat etmeyi sağlar.</p></div>
+                <div class="item-card"><h3>10. Ender İncisi</h3><p>Fırlatıldığında, düştüğü yere oyuncuyu ışınlar. Hızlı hareket etmek, duvarların üzerinden geçmek ve tehlikeden kaçmak için kullanılır.</p></div>
+                <div class="item-card"><h3>11. Fırça (Brush)</h3><p>Arkeoloji için kullanılır. Şüpheli Kum veya Çakıl bloklarına uygulandığında içindeki çömlek parçaları gibi eşyaları ortaya çıkarır.</p></div>
+                <div class="item-card"><h3>12. Dürbün (Spyglass)</h3><p>Uzak mesafeleri yakınlaştırarak görmenizi sağlar. Keşif yaparken, düşman üslerini gözetlerken veya uzaktaki bir yapıyı anlamaya çalışırken çok kullanışlıdır.</p></div>
+                <div class="item-card"><h3>13. Mıknatıstaşı</h3><p>Bir pusulaya sağ tıklandığında, o pusulanın her zaman o Mıknatıstaşı'nı göstermesini sağlar. Üslerinizin yerini kaybetmemek için mükemmeldir.</p></div>
+                <div class="item-card"><h3>14. Kalkan (Shield)</h3><p>Saldırıları engellemek için kullanılır. İskelet oklarından, Creeper patlamalarından ve çoğu yakın dövüş saldırısından korur.</p></div>
+                <div class="item-card"><h3>15. Olta</h3><p>Sadece balık tutmak için değil, aynı zamanda mob'ları ve eşyaları kendinize çekmek için de kullanılabilir. Ayrıca hazine (büyülü kitaplar, eyerler) yakalama potansiyeli de vardır.</p></div>
+            </div>
+        </div>
+        
+        <div id="yorumlar" class="section comment-section">
+            <h2 class="section-title" style="color: var(--primary-green); text-align: left;">Yorumlar ve Tartışma</h2>
+            <form class="comment-form" id="commentForm">
+                <h3>Bir Yorum Bırakın</h3>
+                <input type="text" id="commentAuthor" placeholder="Adınız..." required>
+                <textarea rows="5" id="commentText" placeholder="Rehber hakkındaki düşüncelerinizi buraya yazın..." required></textarea>
+                <button type="submit">Yorumu Gönder</button>
+            </form>
+            <div class="comment-list" id="commentList">
+                <h3>Son Yorumlar</h3>
+                <div class="comment-card">
+                    <div class="comment-author">Steve</div>
+                    <div class="comment-date">24 Temmuz 2025</div>
+                    <div class="comment-body">Harika bir rehber! Özellikle yeni başlayanlar için olan bölüm çok yardımcı oldu. Elmasları tam da Y=-59'da buldum, teşekkürler!</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('searchInput');
+            const itemCards = document.querySelectorAll('.item-card, .info-section'); 
+            searchInput.addEventListener('input', function(e) {
+                const searchTerm = e.target.value.toLowerCase().trim();
+                document.querySelectorAll('.section-title, .mob-section h3').forEach(title => {
+                    title.style.display = searchTerm ? 'none' : 'flex';
+                });
+                itemCards.forEach(card => {
+                    const cardText = card.textContent.toLowerCase();
+                    if (card.id === 'baslangic' && searchTerm !== '') {
+                        card.style.display = 'none';
+                        return;
+                    }
+                    if (cardText.includes(searchTerm)) {
+                        card.style.display = card.classList.contains('info-section') ? 'block' : 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+            const commentForm = document.getElementById('commentForm');
+            const commentList = document.getElementById('commentList');
+            const commentAuthorInput = document.getElementById('commentAuthor');
+            const commentTextInput = document.getElementById('commentText');
+            commentForm.addEventListener('submit', function(e) {
+                e.preventDefault(); 
+                const author = commentAuthorInput.value.trim();
+                const text = commentTextInput.value.trim();
+                if (author === '' || text === '') { alert('Lütfen tüm alanları doldurun.'); return; }
+                const newComment = document.createElement('div');
+                newComment.classList.add('comment-card');
+                const date = new Date();
+                const formattedDate = `${date.getDate()} ${date.toLocaleString('tr-TR', { month: 'long' })} ${date.getFullYear()}`;
+                newComment.innerHTML = `<div class="comment-author">${author.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</div><div class="comment-date">${formattedDate}</div><div class="comment-body">${text.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</div>`;
+                commentList.insertBefore(newComment, commentList.children[1]);
+                commentAuthorInput.value = '';
+                commentTextInput.value = '';
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Güncellemeler - MineWorld</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=M+PLUS+Rounded+1c:wght@800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-green: #5E8C4A;
+            --dark-soil: #6B4F38;
+            --stone-gray: #A9A9A9;
+            --dark-stone: #4A464A;
+            --diamond-blue: #6AE6E6;
+            --lapis-blue: #0048BA;
+            --redstone-red: #D9534F;
+            --background-light: #ffffff;
+            --background-dark: #2C2C2C;
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--background-dark); color: var(--text-light); line-height: 1.7; margin: 0; padding: 0; }
+        .disclaimer-banner { background-color: #ffc107; color: #000; text-align: center; padding: 10px; font-size: 0.9rem; font-weight: bold; }
+        header { background-color: var(--primary-green); background-image: linear-gradient(to bottom, #7DB86A, var(--primary-green)); color: white; padding: 2.5rem 1.5rem; text-align: center; border-bottom: 12px solid var(--dark-soil); text-shadow: 3px 3px 5px rgba(0,0,0,0.5); position: relative; }
+        header h1 { font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 4rem; margin: 0; letter-spacing: 1px; }
+        nav { background: var(--dark-stone); padding: 0.5rem; text-align: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 8px rgba(0,0,0,0.3); white-space: nowrap; overflow-x: auto; }
+        nav a { font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; color: white; text-decoration: none; padding: 1rem 1.2rem; transition: background-color 0.2s, color 0.2s; font-size: 1rem; display: inline-block; }
+        nav a:hover { background: var(--diamond-blue); color: var(--dark-stone); }
+        .container { width: 90%; max-width: 900px; margin: auto; padding: 2.5rem 0; display: flex; justify-content: center; align-items: center; min-height: 50vh; }
+        .update-notice {
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--diamond-blue);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            border: 4px dashed var(--diamond-blue);
+            padding: 2rem 3rem;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="disclaimer-banner">
+        Bu site Mojang ya da Microsoft ile resmi olarak bağlantılı değildir. Minecraft, Mojang Studios’un tescilli markasıdır.
+    </div>
+
+    <header>
+        <div class="author-info">Ömer Tuğra Tarafından</div>
+        <h1>MineWorld</h1>
+        <p>Kapsamlı Minecraft Rehberi</p>
+    </header>
+
+    <nav>
+        <a href="minecraftrehberim.html">Ana Sayfa</a>
+        <a href="hakkimda.html">Hakkımda</a>
+        <a href="hakkimda.html#iksirler">İksirler</a>
+        <a href="minecraftrehberim.html#moblar">Moblar</a>
+    </nav>
+    
+    <div class="container">
+        <div class="update-notice">
+            Güncelleme Eklenecek
+        </div>
+    </div>
+
+</body>
+</html>
