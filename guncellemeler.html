@@ -8,7 +8,59 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=M+PLUS+Rounded+1c:wght@800&display=swap" rel="stylesheet">
     <style>
-        /* Diğer sayfalarla tutarlı CSS stilleri */
+        :root {
+            --primary-green: #5E8C4A;
+            --dark-soil: #6B4F38;
+            --stone-gray: #A9A9A9;
+            --dark-stone: #4A464A;
+            --diamond-blue: #6AE6E6;
+            --lapis-blue: #0048BA;
+            --redstone-red: #D9534F;
+            --background-light: #ffffff;
+            --background-dark: #2C2C2C;
+            --text-light: #E5E5E5;
+            --text-dark: #222222;
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--background-dark); color: var(--text-light); line-height: 1.7; margin: 0; padding: 0; position: relative; overflow-x: hidden; }
+        .disclaimer-banner { background-color: #ffc107; color: #000; text-align: center; padding: 10px; font-size: 0.9rem; font-weight: bold; }
+        body::before {
+            content: '';
+            position: fixed; top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: -1;
+            background-repeat: repeat;
+            background-size: 200px 200px;
+            opacity: 0.05;
+            animation: creeperAndEnderman 120s linear infinite;
+        }
+        @keyframes creeperAndEnderman {
+            0%, 48% {
+                background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48ZyBmaWxsPSIjMDBhODAwIj48cmVjdCB3aWR0aD0iMjUiIGhlaWdodD0iMjUiIHg9IjE4IiB5PSIxOCIvPjxyZWN0IHdpZHRoPSIyNSIgaGVpZ2h0PSIyNSIgeD0iNTciIHk9IjE4Ii8+PHJlY3Qgd2lkdGg9IjI1IiBoZWlnaHQ9IjI1IiB4PSIzNy41IiB5PSI0MyIvPjxyZWN0IHdpZHRoPSIxMi41IiBoZWlnaHQ9IjI1IiB4PSIyNSIgeT0iNTUuNSIvPjxyZWN0IHdpZHRoPSIxMi41IiBoZWlnaHQ9IjI1IiB4PSI2Mi41IiB5PSI1NS41Ii8+PC9nPjwvc3ZnPg==');
+                opacity: 0.05;
+            }
+            50% { opacity: 0; }
+            52%, 100% {
+                background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGc+PHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9IiMwMDAiLz48cmVjdCB4PSIxNSIgeT0iNDAiIHdpZHRoPSIzMCIgaGVpZ2h0PSIxMCIgZmlsbD0iI0Q5MDBFRCIvPjxyZWN0IHg9IjU1IiB5PSI0MCIgd2lkdGg9IjMwIiBoZWlnaHQ9IjEwIiBmaWxsPSIjRDkwMEVEIi8+PC9nPjwvc3ZnPg==');
+                opacity: 0.05;
+            }
+        }
+        .author-info { position: absolute; top: 15px; right: 20px; font-size: 0.9rem; color: white; opacity: 0.7; font-style: italic; text-shadow: 1px 1px 2px #000; }
+        header { background-color: var(--primary-green); background-image: linear-gradient(to bottom, #7DB86A, var(--primary-green)); color: white; padding: 2.5rem 1.5rem; text-align: center; border-bottom: 12px solid var(--dark-soil); text-shadow: 3px 3px 5px rgba(0,0,0,0.5); position: relative; }
+        header h1 { font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 4rem; margin: 0; letter-spacing: 1px; }
+        .nav-wrapper { background: var(--dark-stone); padding: 0.5rem 1rem; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 8px rgba(0,0,0,0.3); display: flex; justify-content: center; align-items: center; flex-wrap: wrap; }
+        nav { text-align: center; white-space: nowrap; overflow-x: auto; }
+        nav a { font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; color: white; text-decoration: none; padding: 1rem 1.2rem; transition: background-color 0.2s, color 0.2s; font-size: 1rem; display: inline-block; }
+        nav a:hover { background: var(--diamond-blue); color: var(--dark-stone); }
+        .container { width: 90%; max-width: 1200px; margin: auto; padding: 2.5rem 0; }
+        .section { padding-top: 70px; margin-top: -70px; margin-bottom: 2rem; }
+        .section-title { font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 2.8rem; color: var(--diamond-blue); text-align: center; margin-bottom: 2.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); display: flex; align-items: center; justify-content: center; }
+        .section-title::before { content: ''; display: inline-block; width: 18px; height: 18px; background-color: var(--diamond-blue); margin-right: 15px; transform: rotate(45deg); opacity: 0.8; }
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
+        .item-card { background: var(--background-light); color: var(--text-dark); border: 2px solid #ddd; border-radius: 8px; padding: 1.5rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; display: flex; flex-direction: column; }
+        .item-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); border-color: var(--primary-green); }
+        .item-card h3 { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.4rem; color: var(--lapis-blue); margin-top: 0; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; }
+        .item-card p { flex-grow: 1; }
     </style>
 </head>
 <body>
@@ -23,13 +75,20 @@
         <p>Kapsamlı Minecraft Rehberi</p>
     </header>
 
-    <nav>
-        <a href="index.html">Ana Sayfa</a>
-        <a href="hakkimda.html">Hakkımda</a>
-        <a href="hakkimda.html#iksirler">İksirler</a>
-        <a href="index.html#moblar">Moblar</a>
-        <a href="guncellemeler.html">Biyomlar</a>
-    </nav>
+    <div class="nav-wrapper">
+        <nav>
+            <a href="index.html">Ana Sayfa</a>
+            <a href="hakkimda.html">Hakkımda</a>
+            <a href="hakkimda.html#iksirler">İksirler</a>
+            <a href="index.html#moblar">Moblar</a>
+            <a href="index.html#farmlar">Farmlar</a>
+            <a href="index.html#zirhlar">Zırhlar</a>
+            <a href="index.html#buyuler">Büyüler</a>
+            <a href="index.html#esyalar">Eşyalar</a>
+            <a href="index.html#yorumlar">Yorumlar</a>
+            <a href="guncellemeler.html">Biyomlar</a>
+        </nav>
+    </div>
     
     <div class="container">
         <div id="biyomlar" class="section">
@@ -44,7 +103,7 @@
                 <div class="item-card"><h3>7. Bataklık (Swamp)</h3><p>Sığ, koyu renkli suları ve sarmaşıklarla kaplı meşe ağaçları vardır. Slime'lar geceleri burada sıkça doğar. Cadı kulübeleri sadece bu biyomda bulunur.</p></div>
                 <div class="item-card"><h3>8. Dağlar (Mountains)</h3><p>Yüksek ve engebeli arazilerdir. Zümrüt cevheri sadece burada bulunur. Keçiler bu yamaçlarda zıplar. Karla kaplı zirveleri vardır.</p></div>
                 <div class="item-card"><h3>9. Okyanus (Ocean)</h3><p>Geniş su kütleleridir. Yunuslar, balıklar ve kalamarlar yaşar. Mercan resifleri, batık gemiler ve okyanus anıtları gibi keşfedilecek birçok yapı barındırır.</p></div>
-                <div class="item-card"><h3>10. Mantar Tarlaları (Mushroom Fields)</h3><p>En nadir ve en güvenli biyomdur. Yüzeyinde hiçbir düşman canavar doğmaz. Dev mantarlar ve Mooshroom adlı özel ineklerle kaplıdır.</p></div>
+                <div class="item-card"><h3>10. Mantar Tarlaları</h3><p>En nadir ve en güvenli biyomdur. Yüzeyinde hiçbir düşman canavar doğmaz. Dev mantarlar ve Mooshroom adlı özel ineklerle kaplıdır.</p></div>
                 <div class="item-card"><h3>11. Nether Biyomları</h3><p>Nether, Kızıl Orman, Çarpık Orman, Ruh Kumu Vadisi gibi kendine özgü tehlikeli biyomlara ayrılmıştır. Her birinde farklı canavarlar ve kaynaklar bulunur.</p></div>
                 <div class="item-card"><h3>12. End (The End)</h3><p>Enderman'lerin ve Shulker'ların evi olan, soluk adalardan oluşan bir boyuttur. Ender Ejderhası burada yaşar. End şehirleri ve nadir bulunan Elytra bu boyutta bulunur.</p></div>
             </div>
