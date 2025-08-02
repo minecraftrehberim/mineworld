@@ -1,66 +1,74 @@
-🇹🇷 Türkçe
-🌐 Genesis Web Sitesi
-Genesis Web, Minecraft RP senaryoları ve futbol analizleri üzerine özelleştirilmiş bir içerik platformudur. Hem oyuncular hem de analiz tutkunları için optimize edilmiştir. Mobil erişim ve kullanıcı deneyimi ön plandadır.
+🇹🇷 Türkçe – Genesis Web Sitesi
+🧩 Genel Bakış
+Genesis Web, sade ve erişilebilir tasarımıyla modern bir kullanıcı deneyimi sunan bir içerik platformudur. Kod yapısı temiz, içerik düzeni anlaşılır ve tüm cihazlarda tutarlı görünüm hedeflenmiştir. Hedefimiz; kullanıcıların aradıkları bilgiye en hızlı ve en kolay şekilde ulaşabilmeleridir.
 
 📦 Özellikler
-Minecraft içerikleri ve özel senaryolar
+📱 Mobil Uyumluluk: Tüm ekran boyutları için optimize edilmiş tasarım
 
-Mobil uyumlu tasarım
+⚡ Hızlı Yüklenme: Gereksiz kodlardan arındırılmış ve sıkıştırılmış yapılar
 
-Hızlı ve sade kullanıcı arayüzü
+🧭 Kolay Navigasyon: Anlamlı menü hiyerarşisi ve kullanıcı dostu arayüz
 
-🚀 Kurulum
-bash
-git clone https://github.com/Genesis/GenesisWeb.git
-cd GenesisWeb
-npm install
-npm run dev
-📬 Geri Bildirim
-Herhangi bir katkı için, ya da bir öneri için
-Epostam: Omee4738@gmail.com
+🔐 Güvenlik Odaklı Yapı: Veri gizliliği ve güvenli tarama deneyimi
 
+🖼️ Tasarım İlkeleri
+Minimalist & işlevsel
 
-🇬🇧 English
-🌐 Genesis Website
-Genesis Web is a customized content platform focused on Minecraft RP scenarios and football transfer analysis. Built for both strategic gamers and football enthusiasts, it prioritizes mobile accessibility and user experience.
+Aydınlık temalı
+
+Tutarlı yazı tipi ve renk kullanımı
+
+📬 İletişim
+Her türlü öneri veya geri bildirim için:
+
+📧 Gmail: Omee4738@gmail.com
+
+🇬🇧 English – Genesis Website
+🧩 Overview
+Genesis Web is a modern and streamlined content platform designed for speed, clarity, and accessibility. With a minimalist structure and intuitive design, it ensures users can navigate easily and find information without distractions.
 
 📦 Features
-Original Minecraft content
+📱 Mobile Compatibility: Optimized layout for all screen sizes
 
-Fully responsive mobile design
+⚡ Fast Performance: Clean and compressed codebase
 
-Clean and fast user interface
+🧭 Easy Navigation: Clear menu hierarchy and user-friendly interface
 
-🚀 Installation
-bash
-git clone https://github.com/Genesis/GenesisWeb.git
-cd GenesisWeb
-npm install
-npm run dev
-📬 Feedback
-For any suggestions or contributions, feel free to reach out:
+🔐 Security-Oriented Structure: Safe browsing with attention to user privacy
 
-Gmail: Omee4738@gmail.com
+🖼️ Design Principles
+Minimal and functional
 
-🇩🇪 Deutsch
-🌐 Genesis Webseite
-Genesis Web ist eine spezialisierte Inhaltsplattform für Minecraft-Rollenspiel-Szenarien und Fußballtransferanalysen. Sie richtet sich an strategisch denkende Spieler sowie Fußballfans und bietet eine benutzerfreundliche mobile Ansicht.
+Bright theme with consistent visuals
+
+Typography and color harmony across all pages
+
+📬 Contact
+For any feedback or suggestions:
+
+📧 Gmail: Omee4738@gmail.com
+
+🇩🇪 Deutsch – Genesis Webseite
+🧩 Übersicht
+Genesis Web ist eine moderne und benutzerfreundliche Plattform, die sich auf Geschwindigkeit, Übersichtlichkeit und Zugänglichkeit konzentriert. Mit einem minimalistischen Design und klarer Struktur bietet sie eine reibungslose Benutzererfahrung.
 
 📦 Funktionen
-Eigene Minecraft-Inhalte
+📱 Mobilfreundlich: Optimierte Darstellung für alle Bildschirmgrößen
 
-Mobiltaugliches Design
+⚡ Hohe Ladegeschwindigkeit: Schlanker und effizienter Code
 
-Schnelle und übersichtliche Benutzeroberfläche
+🧭 Einfache Navigation: Verständliche Menüs und klare Seitenstruktur
 
-🚀 Installation
-bash
-git clone https://github.com/Genesis/GenesisWeb.git
-cd GenesisWeb
-npm install
-npm run dev
-Für Vorschläge oder Beiträge kannst du uns hier kontaktieren:
+🔐 Datenschutz & Sicherheit: Nutzerfreundliches und geschütztes Surfen
 
-Gmail: Omee4738@gmail.com
+🖼️ Design-Grundlagen
+Minimalistisch und funktional
 
+Helles Farbschema
 
+Einheitliche Typografie und Farbnutzung
+
+📬 Kontakt
+Für Rückmeldungen oder Anfragen:
+
+📧 Gmail: Omee4738@gmail.com
