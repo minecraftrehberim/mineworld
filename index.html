@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=M+PLUS+Rounded+1c:wght@800&display=swap" rel="stylesheet">
     <style>
-        :root { --primary-green: #5E8C4A; --dark-soil: #6B4F38; --stone-gray: #A9A9AA; --dark-stone: #4A464A; --diamond-blue: #6AE6E6; --lapis-blue: #0048BA; --redstone-red: #D9534F; --potion-purple: #8A2BE2; --background-light: #ffffff; --background-dark: #2C2C2C; --text-light: #E5E5E5; --text-dark: #222222; }
+        :root { --primary-green: #5E8C4A; --dark-soil: #6B4F38; --stone-gray: #A9A9A9; --dark-stone: #4A464A; --diamond-blue: #6AE6E6; --lapis-blue: #0048BA; --redstone-red: #D9534F; --potion-purple: #8A2BE2; --background-light: #ffffff; --background-dark: #2C2C2C; --text-light: #E5E5E5; --text-dark: #222222; }
         html { scroll-behavior: smooth; }
         body { font-family: 'Inter', sans-serif; background-color: var(--background-dark); color: var(--text-light); line-height: 1.7; margin: 0; padding: 0; position: relative; overflow-x: hidden; }
         .disclaimer-banner { background-color: #ffc107; color: #000; text-align: center; padding: 10px; font-size: 0.9rem; font-weight: bold; }
@@ -55,6 +55,19 @@
         .comment-list .comment-card { background-color: #f9f9f9; border: 1px solid #eee; padding: 1rem; border-radius: 5px; margin-bottom: 1rem; }
         .comment-author { font-weight: bold; color: var(--lapis-blue); }
         .comment-date { font-size: 0.8rem; color: #888; margin-bottom: 0.5rem; }
+        .mobile-nav-toggle { display: none; }
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5rem; }
+            .author-info, .about-arrow { display: none; }
+            .section-title { font-size: 2rem; }
+            .grid-container { grid-template-columns: 1fr; }
+            .mobile-nav-toggle { display: block; position: fixed; top: 55px; right: 20px; z-index: 1002; background: var(--dark-stone); color: white; border: 2px solid var(--diamond-blue); border-radius: 5px; width: 40px; height: 40px; font-size: 24px; cursor: pointer; }
+            .nav-wrapper { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0,0,0,0.95); flex-direction: column; justify-content: center; align-items: center; transform: translateX(100%); transition: transform 0.3s ease-in-out; }
+            .nav-wrapper.nav-open { transform: translateX(0); }
+            nav { display: flex; flex-direction: column; align-items: center; overflow-y: auto; }
+            nav a { font-size: 1.5rem; padding: 1rem 0; }
+            .search-container { margin-left: 0; margin-top: 1rem; }
+        }
     </style>
 </head>
 <body>
@@ -68,15 +81,16 @@
         <h1>MineWorld</h1>
         <p>Kapsamlı Minecraft Rehberi</p>
         <a href="about.html" class="about-arrow" title="Hakkımda Sayfası">→</a>
-          
     </header>
 
-    <div class="nav-wrapper">
+    <button class="mobile-nav-toggle" aria-label="Menüyü aç">☰</button>
+
+    <div class="nav-wrapper" id="navWrapper">
         <nav>
             <a href="#baslangic">Başlangıç</a>
             <a href="#madenler">Madenler</a>
             <a href="#yemekler">Yemekler</a>
-            <a href="hakkimda.html#iksirler">İksirler</a>
+            <a href="about.html#iksirler">İksirler</a>
             <a href="#moblar">Moblar</a>
             <a href="#farmlar">Farmlar</a>
             <a href="#zirhlar">Zırhlar</a>
@@ -321,8 +335,13 @@
                 commentAuthorInput.value = '';
                 commentTextInput.value = '';
             });
+            const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+            const navWrapper = document.getElementById('navWrapper');
+            mobileNavToggle.addEventListener('click', () => {
+                navWrapper.classList.toggle('nav-open');
+                mobileNavToggle.innerHTML = navWrapper.classList.contains('nav-open') ? '&times;' : '☰';
+            });
         });
     </script>
-
 </body>
 </html>
