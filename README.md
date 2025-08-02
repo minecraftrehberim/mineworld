@@ -3,7 +3,7 @@
 Genesis Web, Minecraft RP senaryoları ve futbol analizleri üzerine özelleştirilmiş bir içerik platformudur. Hem oyuncular hem de analiz tutkunları için optimize edilmiştir. Mobil erişim ve kullanıcı deneyimi ön plandadır.
 
 📦 Özellikler
-Minecraft RP içerikleri ve özel senaryolar
+Minecraft içerikleri ve özel senaryolar
 
 Futbol transfer analiz videoları
 
@@ -27,7 +27,7 @@ Epostam: Omee4738@gmail.com
 Genesis Web is a customized content platform focused on Minecraft RP scenarios and football transfer analysis. Built for both strategic gamers and football enthusiasts, it prioritizes mobile accessibility and user experience.
 
 📦 Features
-Original Minecraft RP content
+Original Minecraft content
 
 YouTube-based football analysis videos
 
@@ -51,7 +51,7 @@ Gmail: Omee4738@gmail.com
 Genesis Web ist eine spezialisierte Inhaltsplattform für Minecraft-Rollenspiel-Szenarien und Fußballtransferanalysen. Sie richtet sich an strategisch denkende Spieler sowie Fußballfans und bietet eine benutzerfreundliche mobile Ansicht.
 
 📦 Funktionen
-Eigene Minecraft-RP-Inhalte
+Eigene Minecraft-Inhalte
 
 Fußballanalyse-Videos auf YouTube
 
