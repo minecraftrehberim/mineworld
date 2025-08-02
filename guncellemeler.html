@@ -3,21 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biyom Rehberi - MineWorld</title>
+    <title>Biyomlar ve Test - MineWorld</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=M+PLUS+Rounded+1c:wght@800&display=swap" rel="stylesheet">
     <style>
-        :root { --primary-green: #5E8C4A; --dark-soil: #6B4F38; --stone-gray: #A9A9A9; --dark-stone: #4A464A; --diamond-blue: #6AE6E6; --lapis-blue: #0048BA; --background-light: #ffffff; --background-dark: #2C2C2C; }
+        :root { --primary-green: #5E8C4A; --dark-soil: #6B4F38; --stone-gray: #A9A9A9; --dark-stone: #4A464A; --diamond-blue: #6AE6E6; --lapis-blue: #0048BA; --redstone-red: #D9534F; --background-light: #ffffff; --background-dark: #2C2C2C; }
         html { scroll-behavior: smooth; }
         body { font-family: 'Inter', sans-serif; background-color: var(--background-dark); color: var(--text-light); line-height: 1.7; margin: 0; padding: 0; position: relative; overflow-x: hidden; }
         .disclaimer-banner { background-color: #ffc107; color: #000; text-align: center; padding: 10px; font-size: 0.9rem; font-weight: bold; }
-        body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-repeat: repeat; background-size: 200px 200px; opacity: 0.05; animation: creeperAndEnderman 120s linear infinite; }
-        @keyframes creeperAndEnderman {
-            0%, 48% { background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48ZyBmaWxsPSIjMDBhODAwIj48cmVjdCB3aWR0aD0iMjUiIGhlaWdodD0iMjUiIHg9IjE4IiB5PSIxOCIvPjxyZWN0IHdpZHRoPSIyNSIgaGVpZ2h0PSIyNSIgeD0iNTciIHk9IjE4Ii8+PHJlY3Qgd2lkdGg9IjI1IiBoZWlnaHQ9IjI1IiB4PSIzNy41IiB5PSI0MyIvPjxyZWN0IHdpZHRoPSIxMi41IiBoZWlnaHQ9IjI1IiB4PSIyNSIgeT0iNTUuNSIvPjxyZWN0IHdpZHRoPSIxMi41IiBoZWlnaHQ9IjI1IiB4PSI2Mi41IiB5PSI1NS41Ii8+PC9nPjwvc3ZnPg=='); opacity: 0.05; }
-            50% { opacity: 0; }
-            52%, 100% { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGc+PHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9IiMwMDAiLz48cmVjdCB4PSIxNSIgeT0iNDAiIHdpZHRoPSIzMCIgaGVpZ2h0PSIxMCIgZmlsbD0iI0Q5MDBFRCIvPjxyZWN0IHg9IjU1IiB5PSI0MCIgd2lkdGg9IjMwIiBoZWlnaHQ9IjEwIiBmaWxsPSIjRDkwMEVEIi8+PC9nPjwvc3ZnPg=='); opacity: 0.05; }
-        }
+        body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48ZyBmaWxsPSIjMDBhODAwIj48cmVjdCB3aWR0aD0iMjUiIGhlaWdodD0iMjUiIHg9IjE4IiB5PSIxOCIvPjxyZWN0IHdpZHRoPSIyNSIgaGVpZ2h0PSIyNSIgeD0iNTciIHk9IjE4Ii8+PHJlY3Qgd2lkdGg9IjI1IiBoZWlnaHQ9IjI1IiB4PSIzNy41IiB5PSI0MyIvPjxyZWN0IHdpZHRoPSIxMi41IiBoZWlnaHQ9IjI1IiB4PSIyNSIgeT0iNTUuNSIvPjxyZWN0IHdpZHRoPSIxMi41IiBoZWlnaHQ9IjI1IiB4PSI2Mi41IiB5PSI1NS41Ii8+PC9nPjwvc3ZnPg=='); background-repeat: repeat; background-size: 200px 200px; opacity: 0.05; }
         .author-info { position: absolute; top: 15px; right: 20px; font-size: 0.9rem; color: white; opacity: 0.7; font-style: italic; text-shadow: 1px 1px 2px #000; }
         header { background-color: var(--primary-green); background-image: linear-gradient(to bottom, #7DB86A, var(--primary-green)); color: white; padding: 2.5rem 1.5rem; text-align: center; border-bottom: 12px solid var(--dark-soil); text-shadow: 3px 3px 5px rgba(0,0,0,0.5); position: relative; }
         header h1 { font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 4rem; margin: 0; letter-spacing: 1px; }
@@ -30,10 +25,20 @@
         .section-title { font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 2.8rem; color: var(--diamond-blue); text-align: center; margin-bottom: 2.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); display: flex; align-items: center; justify-content: center; }
         .section-title::before { content: ''; display: inline-block; width: 18px; height: 18px; background-color: var(--diamond-blue); margin-right: 15px; transform: rotate(45deg); opacity: 0.8; }
         .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
-        .item-card { background: var(--background-light); color: var(--text-dark); border: 2px solid #ddd; border-radius: 8px; padding: 1.5rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; display: flex; flex-direction: column; }
-        .item-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); border-color: var(--primary-green); }
+        .item-card { background: var(--background-light); color: var(--text-dark); border: 2px solid #ddd; border-radius: 8px; padding: 1.5rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1); display: flex; flex-direction: column; }
         .item-card h3 { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.4rem; color: var(--lapis-blue); margin-top: 0; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; }
         .item-card p { flex-grow: 1; }
+        .quiz-container { background: var(--background-light); color: var(--text-dark); padding: 2rem; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .quiz-container h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+        .answer-buttons { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+        .btn { font-family: 'Inter', sans-serif; font-weight: bold; font-size: 1rem; padding: 1rem; border-radius: 5px; border: 2px solid var(--stone-gray); background-color: white; color: var(--text-dark); cursor: pointer; text-align: left; transition: background-color 0.2s, border-color 0.2s; }
+        .btn:hover:not([disabled]) { background-color: #f0f0f0; border-color: var(--lapis-blue); }
+        .btn.correct { background-color: #90ee90; border-color: #2e8b57; }
+        .btn.incorrect { background-color: #ffb6c1; border-color: #dc143c; }
+        .btn:disabled { cursor: not-allowed; opacity: 0.7; }
+        .quiz-footer { display: flex; justify-content: center; margin-top: 2rem; }
+        #nextBtn, #restartBtn, #startBtn { font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 1.2rem; padding: 0.8rem 2rem; border: none; border-radius: 5px; background-color: var(--primary-green); color: white; cursor: pointer; }
+        #resultsScreen { text-align: center; }
         .mobile-nav-toggle { display: none; }
         @media (max-width: 768px) {
             .mobile-nav-toggle { display: block; position: fixed; top: 55px; right: 20px; z-index: 1002; background: var(--dark-stone); color: white; border: 2px solid var(--diamond-blue); border-radius: 5px; width: 40px; height: 40px; font-size: 24px; cursor: pointer; }
@@ -63,7 +68,7 @@
             <a href="index.html">Ana Sayfa</a>
             <a href="about.html">Hakkımda</a>
             <a href="about.html#iksirler">İksirler</a>
-            <a href="guncellemeler.html">Biyomlar</a>
+            <a href="guncellemeler.html">Biyomlar ve Test</a>
             <a href="index.html#yorumlar">Yorumlar</a>
         </nav>
     </div>
@@ -86,9 +91,145 @@
                 <div class="item-card"><h3>12. End (The End)</h3><p>Enderman'lerin ve Shulker'ların evi olan, soluk adalardan oluşan bir boyuttur. Ender Ejderhası burada yaşar. End şehirleri ve nadir bulunan Elytra bu boyutta bulunur.</p></div>
             </div>
         </div>
+
+        <div id="quiz" class="section">
+            <h2 class="section-title">Minecraft Bilgini Sına!</h2>
+            <div class="quiz-container">
+                <div id="quizStartScreen">
+                    <h3>10 Soruluk Minecraft Testine Hoş Geldin!</h3>
+                    <p>Bakalım ne kadar usta bir Minecraft oyuncususun. Hazır olduğunda başla!</p>
+                    <div class="quiz-footer">
+                        <button id="startBtn">Teste Başla</button>
+                    </div>
+                </div>
+                <div id="quizMainScreen" style="display: none;">
+                    <p id="questionCounter" style="text-align:center; font-weight: bold;"></p>
+                    <h3 id="questionText">Soru Yükleniyor...</h3>
+                    <div id="answerButtons" class="answer-buttons"></div>
+                    <div class="quiz-footer">
+                        <button id="nextBtn" style="display: none;">Sonraki Soru</button>
+                    </div>
+                </div>
+                <div id="resultsScreen" style="display: none;">
+                    <h3 id="scoreText"></h3>
+                    <p>Testi tamamladın! Bilgini tazelemek için rehberdeki diğer sayfalara göz atabilirsin.</p>
+                    <div class="quiz-footer">
+                        <button id="restartBtn">Yeniden Dene</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            const quizQuestions = [
+                { question: "Bir Creeper'ı anında patlamadan korkutup kaçıran hayvan hangisidir?", answers: [ { text: "Kurt", correct: false }, { text: "Kedi", correct: true }, { text: "Demir Golem", correct: false }, { text: "Lama", correct: false } ] },
+                { question: "Netherite Külçesi yapmak için 4 Altın Külçesi ile birleştirilmesi gereken malzeme hangisidir?", answers: [ { text: "Netherite Hurdası", correct: true }, { text: "Nether Tuğlası", correct: false }, { text: "Elmas", correct: false }, { text: "Nether Kuvarsı", correct: false } ] },
+                { question: "'Sıradan İksir' (Awkward Potion) yapmak için Su Şişesi ile ne birleştirilmelidir?", answers: [ { text: "Ghast Gözyaşı", correct: false }, { text: "Blaze Tozu", correct: false }, { text: "Nether Wart", correct: true }, { text: "Parlayan Karpuz", correct: false } ] },
+                { question: "Bir pusulanın her zaman belirli bir bloğu göstermesini sağlayan blok hangisidir?", answers: [ { text: "Büyü Masası", correct: false }, { text: "İşaretçi (Beacon)", correct: false }, { text: "Mıknatıstaşı (Lodestone)", correct: true }, { text: "Ağlayan Obsidyen", correct: false } ] },
+                { question: "End'e gitmek için gereken End Portalı çerçevesini etkinleştirmek için hangi eşya kullanılır?", answers: [ { text: "Ender İncisi", correct: false }, { text: "Elmas", correct: false }, { text: "Ender Gözü", correct: true }, { text: "Nether Yıldızı", correct: false } ] },
+                { question: "Hangi biyomda düşman yaratıklar yüzeyde doğal olarak doğmaz?", answers: [ { text: "Cangıl (Jungle)", correct: false }, { text: "Mantar Tarlaları", correct: true }, { text: "Buzul Sivri Uçları", correct: false }, { text: "Tayga (Taiga)", correct: false } ] },
+                { question: "Bir aletin dayanıklılığını, topladığınız deneyim (XP) ile onaran büyünün adı nedir?", answers: [ { text: "Kırılmazlık", correct: false }, { text: "Verimlilik", correct: false }, { text: "Tamir (Mending)", correct: true }, { text: "Servet", correct: false } ] },
+                { question: "Aşağıdaki bloklardan hangisi bir Elmas Kazma olmadan kazılamaz?", answers: [ { text: "Demir Cevheri", correct: false }, { text: "Altın Cevheri", correct: false }, { text: "Redstone Cevheri", correct: false }, { text: "Obsidyen", correct: true } ] },
+                { question: "Zombi köylüyü normale döndürmek için Zayıflık İksiri attıktan sonra hangi yiyecek verilmelidir?", answers: [ { text: "Altın Havuç", correct: false }, { text: "Biftek", correct: false }, { text: "Altın Elma", correct: true }, { text: "Parlayan Karpuz", correct: false } ] },
+                { question: "Ender Ejderhası'nı yeniden canlandırmak için çıkış portalının etrafına ne yerleştirilmelidir?", answers: [ { text: "Ender Taşı", correct: false }, { text: "Ağlayan Obsidyen", correct: false }, { text: "End Kristali", correct: true }, { text: "Ejderha Yumurtası", correct: false } ] }
+            ];
+
+            const startBtn = document.getElementById('startBtn');
+            const quizStartScreen = document.getElementById('quizStartScreen');
+            const quizMainScreen = document.getElementById('quizMainScreen');
+            const resultsScreen = document.getElementById('resultsScreen');
+            const questionCounterEl = document.getElementById('questionCounter');
+            const questionTextEl = document.getElementById('questionText');
+            const answerButtonsEl = document.getElementById('answerButtons');
+            const nextBtn = document.getElementById('nextBtn');
+            const restartBtn = document.getElementById('restartBtn');
+            const scoreTextEl = document.getElementById('scoreText');
+
+            let currentQuestionIndex, score;
+
+            startBtn.addEventListener('click', startQuiz);
+            nextBtn.addEventListener('click', () => {
+                currentQuestionIndex++;
+                showQuestion();
+            });
+            restartBtn.addEventListener('click', startQuiz);
+
+            function startQuiz() {
+                currentQuestionIndex = 0;
+                score = 0;
+                quizStartScreen.style.display = 'none';
+                resultsScreen.style.display = 'none';
+                quizMainScreen.style.display = 'block';
+                nextBtn.style.display = 'none';
+                showQuestion();
+            }
+
+            function showQuestion() {
+                resetState();
+                const question = quizQuestions[currentQuestionIndex];
+                questionCounterEl.innerText = `${currentQuestionIndex + 1} / ${quizQuestions.length}`;
+                questionTextEl.innerText = question.question;
+                question.answers.forEach(answer => {
+                    const button = document.createElement('button');
+                    button.innerText = answer.text;
+                    button.classList.add('btn');
+                    if (answer.correct) {
+                        button.dataset.correct = answer.correct;
+                    }
+                    button.addEventListener('click', selectAnswer);
+                    answerButtonsEl.appendChild(button);
+                });
+            }
+
+            function selectAnswer(e) {
+                const selectedBtn = e.target;
+                const isCorrect = selectedBtn.dataset.correct === 'true';
+
+                if (isCorrect) {
+                    score++;
+                }
+                
+                Array.from(answerButtonsEl.children).forEach(button => {
+                    setStatusClass(button, button.dataset.correct === 'true');
+                    button.disabled = true;
+                });
+                
+                if (quizQuestions.length > currentQuestionIndex + 1) {
+                    nextBtn.style.display = 'block';
+                } else {
+                    showResults();
+                }
+            }
+            
+            function showResults() {
+                 quizMainScreen.style.display = 'none';
+                 resultsScreen.style.display = 'block';
+                 scoreTextEl.innerText = `Sonuç: ${quizQuestions.length} sorudan ${score} tanesini doğru bildin!`;
+            }
+
+            function setStatusClass(element, correct) {
+                clearStatusClass(element);
+                if (correct) {
+                    element.classList.add('correct');
+                } else {
+                    element.classList.add('incorrect');
+                }
+            }
+
+            function clearStatusClass(element) {
+                element.classList.remove('correct');
+                element.classList.remove('incorrect');
+            }
+
+            function resetState() {
+                nextBtn.style.display = 'none';
+                while (answerButtonsEl.firstChild) {
+                    answerButtonsEl.removeChild(answerButtonsEl.firstChild);
+                }
+            }
+
             const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
             const navWrapper = document.getElementById('navWrapper');
             mobileNavToggle.addEventListener('click', () => {
