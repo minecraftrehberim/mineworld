@@ -12,7 +12,12 @@
         html { scroll-behavior: smooth; }
         body { font-family: 'Inter', sans-serif; background-color: var(--background-dark); color: var(--text-light); line-height: 1.7; margin: 0; padding: 0; position: relative; overflow-x: hidden; }
         .disclaimer-banner { background-color: #ffc107; color: #000; text-align: center; padding: 10px; font-size: 0.9rem; font-weight: bold; }
-        body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48ZyBmaWxsPSIjMDBhODAwIj48cmVjdCB3aWR0aD0iMjUiIGhlaWdodD0iMjUiIHg9IjE4IiB5PSIxOCIvPjxyZWN0IHdpZHRoPSIyNSIgaGVpZ2h0PSIyNSIgeD0iNTciIHk9IjE4Ii8+PHJlY3Qgd2lkdGg9IjI1IiBoZWlnaHQ9IjI1IiB4PSIzNy41IiB5PSI0MyIvPjxyZWN0IHdpZHRoPSIxMi41IiBoZWlnaHQ9IjI1IiB4PSIyNSIgeT0iNTUuNSIvPjxyZWN0IHdpZHRoPSIxMi41IiBoZWlnaHQ9IjI1IiB4PSI2Mi41IiB5PSI1NS41Ii8+PC9nPjwvc3ZnPg=='); background-repeat: repeat; background-size: 200px 200px; opacity: 0.05; }
+        body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-repeat: repeat; background-size: 200px 200px; opacity: 0.05; animation: creeperAndEnderman 120s linear infinite; }
+        @keyframes creeperAndEnderman {
+            0%, 48% { background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48ZyBmaWxsPSIjMDBhODAwIj48cmVjdCB3aWR0aD0iMjUiIGhlaWdodD0iMjUiIHg9IjE4IiB5PSIxOCIvPjxyZWN0IHdpZHRoPSIyNSIgaGVpZ2h0PSIyNSIgeD0iNTciIHk9IjE4Ii8+PHJlY3Qgd2lkdGg9IjI1IiBoZWlnaHQ9IjI1IiB4PSIzNy41IiB5PSI0MyIvPjxyZWN0IHdpZHRoPSIxMi41IiBoZWlnaHQ9IjI1IiB4PSIyNSIgeT0iNTUuNSIvPjxyZWN0IHdpZHRoPSIxMi41IiBoZWlnaHQ9IjI1IiB4PSI2Mi41IiB5PSI1NS41Ii8+PC9nPjwvc3ZnPg=='); opacity: 0.05; }
+            50% { opacity: 0; }
+            52%, 100% { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGc+PHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9IiMwMDAiLz48cmVjdCB4PSIxNSIgeT0iNDAiIHdpZHRoPSIzMCIgaGVpZ2h0PSIxMCIgZmlsbD0iI0Q5MDBFRCIvPjxyZWN0IHg9IjU1IiB5PSI0MCIgd2lkdGg9IjMwIiBoZWlnaHQ9IjEwIiBmaWxsPSIjRDkwMEVEIi8+PC9nPjwvc3ZnPg=='); opacity: 0.05; }
+        }
         .author-info { position: absolute; top: 15px; right: 20px; font-size: 0.9rem; color: white; opacity: 0.7; font-style: italic; text-shadow: 1px 1px 2px #000; }
         header { background-color: var(--primary-green); background-image: linear-gradient(to bottom, #7DB86A, var(--primary-green)); color: white; padding: 2.5rem 1.5rem; text-align: center; border-bottom: 12px solid var(--dark-soil); text-shadow: 3px 3px 5px rgba(0,0,0,0.5); position: relative; }
         header h1 { font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 4rem; margin: 0; letter-spacing: 1px; }
@@ -41,6 +46,10 @@
         #resultsScreen { text-align: center; }
         .mobile-nav-toggle { display: none; }
         @media (max-width: 768px) {
+            header h1 { font-size: 2.5rem; }
+            .author-info { display: none; }
+            .section-title { font-size: 2rem; }
+            .grid-container { grid-template-columns: 1fr; }
             .mobile-nav-toggle { display: block; position: fixed; top: 55px; right: 20px; z-index: 1002; background: var(--dark-stone); color: white; border: 2px solid var(--diamond-blue); border-radius: 5px; width: 40px; height: 40px; font-size: 24px; cursor: pointer; }
             .nav-wrapper { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0,0,0,0.95); flex-direction: column; justify-content: center; align-items: center; transform: translateX(100%); transition: transform 0.3s ease-in-out; }
             .nav-wrapper.nav-open { transform: translateX(0); }
@@ -66,32 +75,14 @@
     <div class="nav-wrapper" id="navWrapper">
         <nav>
             <a href="index.html">Ana Sayfa</a>
-            <a href="about.html">Hakkımda</a>
-            <a href="about.html#iksirler">İksirler</a>
-            <a href="guncellemeler.html">Biyomlar ve Test</a>
+            <a href="about.html">Hakkımda & İksirler</a>
+            <a href="index.html#moblar">Moblar</a>
+            <a href="guncellemeler.html">Biyomlar & Test</a>
             <a href="index.html#yorumlar">Yorumlar</a>
         </nav>
     </div>
     
     <div class="container">
-        <div id="biyomlar" class="section">
-            <h2 class="section-title">Biyom Rehberi</h2>
-            <div class="grid-container">
-                <div class="item-card"><h3>1. Düzlükler (Plains)</h3><p>Başlangıç için ideal, açık ve geniş alanlardır. Atlar, eşekler ve köyler burada sıkça bulunur. Ayçiçeği sadece bu biyomda doğar.</p></div>
-                <div class="item-card"><h3>2. Orman (Forest)</h3><p>Meşe ve huş ağaçlarıyla kaplıdır. Odun toplamak için harikadır. Kurtlar genellikle burada bulunur. İçinde çiçek ormanı gibi daha renkli alt biyomlar barındırabilir.</p></div>
-                <div class="item-card"><h3>3. Çöl (Desert)</h3><p>Geniş kum tepelerinden oluşur. Kaktüs, şeker kamışı ve ölü çalılar bulunur. Geceleri çok tehlikelidir. Çöl tapınakları ve köyleri barındırır.</p></div>
-                <div class="item-card"><h3>4. Savan (Savanna)</h3><p>Akasya ağaçları ve uzun sarı çimenleriyle tanınır. Lamalar ve atlar burada yaşar. Köylerin bulunma olasılığı yüksektir.</p></div>
-                <div class="item-card"><h3>5. Cangıl (Jungle)</h3><p>Devasa ağaçları, sık bitki örtüsü ve sarmaşıklarıyla keşfetmesi zor bir yerdir. Papağanlar, oselotlar, pandalar ve karpuzlar burada bulunur. Cangıl tapınaklarını gizler.</p></div>
-                <div class="item-card"><h3>6. Tayga (Taiga)</h3><p>Ladin ağaçları ve tatlı orman meyveleriyle (sweet berries) doludur. Tilkiler ve kurtlar bu soğuk ormanlarda yaşar. Köyler ve yağmacı karakolları bulunabilir.</p></div>
-                <div class="item-card"><h3>7. Bataklık (Swamp)</h3><p>Sığ, koyu renkli suları ve sarmaşıklarla kaplı meşe ağaçları vardır. Slime'lar geceleri burada sıkça doğar. Cadı kulübeleri sadece bu biyomda bulunur.</p></div>
-                <div class="item-card"><h3>8. Dağlar (Mountains)</h3><p>Yüksek ve engebeli arazilerdir. Zümrüt cevheri sadece burada bulunur. Keçiler bu yamaçlarda zıplar. Karla kaplı zirveleri vardır.</p></div>
-                <div class="item-card"><h3>9. Okyanus (Ocean)</h3><p>Geniş su kütleleridir. Yunuslar, balıklar ve kalamarlar yaşar. Mercan resifleri, batık gemiler ve okyanus anıtları gibi keşfedilecek birçok yapı barındırır.</p></div>
-                <div class="item-card"><h3>10. Mantar Tarlaları</h3><p>En nadir ve en güvenli biyomdur. Yüzeyinde hiçbir düşman canavar doğmaz. Dev mantarlar ve Mooshroom adlı özel ineklerle kaplıdır.</p></div>
-                <div class="item-card"><h3>11. Nether Biyomları</h3><p>Nether, Kızıl Orman, Çarpık Orman, Ruh Kumu Vadisi gibi kendine özgü tehlikeli biyomlara ayrılmıştır. Her birinde farklı canavarlar ve kaynaklar bulunur.</p></div>
-                <div class="item-card"><h3>12. End (The End)</h3><p>Enderman'lerin ve Shulker'ların evi olan, soluk adalardan oluşan bir boyuttur. Ender Ejderhası burada yaşar. End şehirleri ve nadir bulunan Elytra bu boyutta bulunur.</p></div>
-            </div>
-        </div>
-
         <div id="quiz" class="section">
             <h2 class="section-title">Minecraft Bilgini Sına!</h2>
             <div class="quiz-container">
@@ -122,6 +113,7 @@
     </div>
 
     <script>
+        // --- YENİ DÜZENLEME: Tüm script bu komutun içine alındı ---
         document.addEventListener('DOMContentLoaded', function() {
             const quizQuestions = [
                 { question: "Bir Creeper'ı anında patlamadan korkutup kaçıran hayvan hangisidir?", answers: [ { text: "Kurt", correct: false }, { text: "Kedi", correct: true }, { text: "Demir Golem", correct: false }, { text: "Lama", correct: false } ] },
