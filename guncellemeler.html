@@ -8,42 +8,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=M+PLUS+Rounded+1c:wght@800&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-green: #5E8C4A;
-            --dark-soil: #6B4F38;
-            --stone-gray: #A9A9A9;
-            --dark-stone: #4A464A;
-            --diamond-blue: #6AE6E6;
-            --lapis-blue: #0048BA;
-            --redstone-red: #D9534F;
-            --background-light: #ffffff;
-            --background-dark: #2C2C2C;
-            --text-light: #E5E5E5;
-            --text-dark: #222222;
-        }
+        :root { --primary-green: #5E8C4A; --dark-soil: #6B4F38; --stone-gray: #A9A9A9; --dark-stone: #4A464A; --diamond-blue: #6AE6E6; --lapis-blue: #0048BA; --background-light: #ffffff; --background-dark: #2C2C2C; }
         html { scroll-behavior: smooth; }
         body { font-family: 'Inter', sans-serif; background-color: var(--background-dark); color: var(--text-light); line-height: 1.7; margin: 0; padding: 0; position: relative; overflow-x: hidden; }
         .disclaimer-banner { background-color: #ffc107; color: #000; text-align: center; padding: 10px; font-size: 0.9rem; font-weight: bold; }
-        body::before {
-            content: '';
-            position: fixed; top: 0; left: 0;
-            width: 100%; height: 100%;
-            z-index: -1;
-            background-repeat: repeat;
-            background-size: 200px 200px;
-            opacity: 0.05;
-            animation: creeperAndEnderman 120s linear infinite;
-        }
+        body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-repeat: repeat; background-size: 200px 200px; opacity: 0.05; animation: creeperAndEnderman 120s linear infinite; }
         @keyframes creeperAndEnderman {
-            0%, 48% {
-                background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48ZyBmaWxsPSIjMDBhODAwIj48cmVjdCB3aWR0aD0iMjUiIGhlaWdodD0iMjUiIHg9IjE4IiB5PSIxOCIvPjxyZWN0IHdpZHRoPSIyNSIgaGVpZ2h0PSIyNSIgeD0iNTciIHk9IjE4Ii8+PHJlY3Qgd2lkdGg9IjI1IiBoZWlnaHQ9IjI1IiB4PSIzNy41IiB5PSI0MyIvPjxyZWN0IHdpZHRoPSIxMi41IiBoZWlnaHQ9IjI1IiB4PSIyNSIgeT0iNTUuNSIvPjxyZWN0IHdpZHRoPSIxMi41IiBoZWlnaHQ9IjI1IiB4PSI2Mi41IiB5PSI1NS41Ii8+PC9nPjwvc3ZnPg==');
-                opacity: 0.05;
-            }
+            0%, 48% { background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48ZyBmaWxsPSIjMDBhODAwIj48cmVjdCB3aWR0aD0iMjUiIGhlaWdodD0iMjUiIHg9IjE4IiB5PSIxOCIvPjxyZWN0IHdpZHRoPSIyNSIgaGVpZ2h0PSIyNSIgeD0iNTciIHk9IjE4Ii8+PHJlY3Qgd2lkdGg9IjI1IiBoZWlnaHQ9IjI1IiB4PSIzNy41IiB5PSI0MyIvPjxyZWN0IHdpZHRoPSIxMi41IiBoZWlnaHQ9IjI1IiB4PSIyNSIgeT0iNTUuNSIvPjxyZWN0IHdpZHRoPSIxMi41IiBoZWlnaHQ9IjI1IiB4PSI2Mi41IiB5PSI1NS41Ii8+PC9nPjwvc3ZnPg=='); opacity: 0.05; }
             50% { opacity: 0; }
-            52%, 100% {
-                background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGc+PHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9IiMwMDAiLz48cmVjdCB4PSIxNSIgeT0iNDAiIHdpZHRoPSIzMCIgaGVpZ2h0PSIxMCIgZmlsbD0iI0Q5MDBFRCIvPjxyZWN0IHg9IjU1IiB5PSI0MCIgd2lkdGg9IjMwIiBoZWlnaHQ9IjEwIiBmaWxsPSIjRDkwMEVEIi8+PC9nPjwvc3ZnPg==');
-                opacity: 0.05;
-            }
+            52%, 100% { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGc+PHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9IiMwMDAiLz48cmVjdCB4PSIxNSIgeT0iNDAiIHdpZHRoPSIzMCIgaGVpZ2h0PSIxMCIgZmlsbD0iI0Q5MDBFRCIvPjxyZWN0IHg9IjU1IiB5PSI0MCIgd2lkdGg9IjMwIiBoZWlnaHQ9IjEwIiBmaWxsPSIjRDkwMEVEIi8+PC9nPjwvc3ZnPg=='); opacity: 0.05; }
         }
         .author-info { position: absolute; top: 15px; right: 20px; font-size: 0.9rem; color: white; opacity: 0.7; font-style: italic; text-shadow: 1px 1px 2px #000; }
         header { background-color: var(--primary-green); background-image: linear-gradient(to bottom, #7DB86A, var(--primary-green)); color: white; padding: 2.5rem 1.5rem; text-align: center; border-bottom: 12px solid var(--dark-soil); text-shadow: 3px 3px 5px rgba(0,0,0,0.5); position: relative; }
@@ -61,6 +34,14 @@
         .item-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); border-color: var(--primary-green); }
         .item-card h3 { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.4rem; color: var(--lapis-blue); margin-top: 0; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; }
         .item-card p { flex-grow: 1; }
+        .mobile-nav-toggle { display: none; }
+        @media (max-width: 768px) {
+            .mobile-nav-toggle { display: block; position: fixed; top: 55px; right: 20px; z-index: 1002; background: var(--dark-stone); color: white; border: 2px solid var(--diamond-blue); border-radius: 5px; width: 40px; height: 40px; font-size: 24px; cursor: pointer; }
+            .nav-wrapper { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0,0,0,0.95); flex-direction: column; justify-content: center; align-items: center; transform: translateX(100%); transition: transform 0.3s ease-in-out; }
+            .nav-wrapper.nav-open { transform: translateX(0); }
+            nav { display: flex; flex-direction: column; align-items: center; overflow-y: auto; }
+            nav a { font-size: 1.5rem; padding: 1rem 0; }
+        }
     </style>
 </head>
 <body>
@@ -75,18 +56,15 @@
         <p>Kapsamlı Minecraft Rehberi</p>
     </header>
 
-    <div class="nav-wrapper">
+    <button class="mobile-nav-toggle" aria-label="Menüyü aç">☰</button>
+
+    <div class="nav-wrapper" id="navWrapper">
         <nav>
             <a href="index.html">Ana Sayfa</a>
             <a href="about.html">Hakkımda</a>
             <a href="about.html#iksirler">İksirler</a>
-            <a href="index.html#moblar">Moblar</a>
-            <a href="index.html#farmlar">Farmlar</a>
-            <a href="index.html#zirhlar">Zırhlar</a>
-            <a href="index.html#buyuler">Büyüler</a>
-            <a href="index.html#esyalar">Eşyalar</a>
-            <a href="index.html#yorumlar">Yorumlar</a>
             <a href="guncellemeler.html">Biyomlar</a>
+            <a href="index.html#yorumlar">Yorumlar</a>
         </nav>
     </div>
     
@@ -109,6 +87,15 @@
             </div>
         </div>
     </div>
-
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+            const navWrapper = document.getElementById('navWrapper');
+            mobileNavToggle.addEventListener('click', () => {
+                navWrapper.classList.toggle('nav-open');
+                mobileNavToggle.innerHTML = navWrapper.classList.contains('nav-open') ? '&times;' : '☰';
+            });
+        });
+    </script>
 </body>
 </html>
