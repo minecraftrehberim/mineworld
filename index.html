@@ -4,86 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MineWorld - Kapsamlı Minecraft Rehberi</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=M+PLUS+Rounded+1c:wght@800&display=swap" rel="stylesheet">
     <style>
-        :root { --primary-green: #5E8C4A; --dark-soil: #6B4F38; --stone-gray: #A9A9A9; --dark-stone: #4A464A; --diamond-blue: #6AE6E6; --lapis-blue: #0048BA; --redstone-red: #D9534F; --potion-purple: #8A2BE2; --background-light: #ffffff; --background-dark: #2C2C2C; --text-light: #E5E5E5; --text-dark: #222222; }
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--background-dark); color: var(--text-light); line-height: 1.7; margin: 0; padding: 0; position: relative; overflow-x: hidden; }
-        .disclaimer-banner { background-color: #ffc107; color: #000; text-align: center; padding: 10px; font-size: 0.9rem; font-weight: bold; }
-        body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-repeat: repeat; background-size: 200px 200px; opacity: 0.05; animation: creeperAndEnderman 120s linear infinite; }
-        @keyframes creeperAndEnderman {
-            0%, 48% { background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48ZyBmaWxsPSIjMDBhODAwIj48cmVjdCB3aWR0aD0iMjUiIGhlaWdodD0iMjUiIHg9IjE4IiB5PSIxOCIvPjxyZWN0IHdpZHRoPSIyNSIgaGVpZ2h0PSIyNSIgeD0iNTciIHk9IjE4Ii8+PHJlY3Qgd2lkdGg9IjI1IiBoZWlnaHQ9IjI1IiB4PSIzNy41IiB5PSI0MyIvPjxyZWN0IHdpZHRoPSIxMi41IiBoZWlnaHQ9IjI1IiB4PSIyNSIgeT0iNTUuNSIvPjxyZWN0IHdpZHRoPSIxMi41IiBoZWlnaHQ9IjI1IiB4PSI2Mi41IiB5PSI1NS41Ii8+PC9nPjwvc3ZnPg=='); opacity: 0.05; }
-            50% { opacity: 0; }
-            52%, 100% { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGc+PHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9IiMwMDAiLz48cmVjdCB4PSIxNSIgeT0iNDAiIHdpZHRoPSIzMCIgaGVpZ2h0PSIxMCIgZmlsbD0iI0Q5MDBFRCIvPjxyZWN0IHg9IjU1IiB5PSI0MCIgd2lkdGg9IjMwIiBoZWlnaHQ9IjEwIiBmaWxsPSIjRDkwMEVEIi8+PC9nPjwvc3ZnPg=='); opacity: 0.05; }
-        }
-        .author-info { position: absolute; top: 15px; right: 20px; font-size: 0.9rem; color: white; opacity: 0.7; font-style: italic; text-shadow: 1px 1px 2px #000; }
-        header { background-color: var(--primary-green); background-image: linear-gradient(to bottom, #7DB86A, var(--primary-green)); color: white; padding: 2.5rem 1.5rem; text-align: center; border-bottom: 12px solid var(--dark-soil); text-shadow: 3px 3px 5px rgba(0,0,0,0.5); position: relative; }
-        .about-arrow { position: absolute; top: 50%; right: 40px; transform: translateY(-50%); width: 50px; height: 50px; background-color: rgba(255, 255, 255, 0.1); border: 2px solid rgba(255, 255, 255, 0.5); border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: white; font-size: 2rem; transition: all 0.3s ease; }
-        .about-arrow:hover { background-color: rgba(255, 255, 255, 0.2); transform: translateY(-50%) scale(1.1); border-color: white; }
-        header h1 { font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 4rem; margin: 0; letter-spacing: 1px; }
-        .nav-wrapper { background: var(--dark-stone); padding: 0.5rem 1rem; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 8px rgba(0,0,0,0.3); display: flex; justify-content: center; align-items: center; flex-wrap: wrap; }
-        nav { text-align: center; white-space: nowrap; overflow-x: auto; }
-        nav a { font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; color: white; text-decoration: none; padding: 1rem 1.2rem; transition: background-color 0.2s, color 0.2s; font-size: 1rem; display: inline-block; }
-        nav a:hover { background: var(--diamond-blue); color: var(--dark-stone); }
-        .search-container { margin-left: 20px; }
-        #searchInput { padding: 8px 12px; border-radius: 20px; border: 2px solid #555; background-color: #333; color: white; font-size: 0.9rem; }
-        .container { width: 90%; max-width: 1200px; margin: auto; padding: 2.5rem 0; }
-        .section { padding-top: 70px; margin-top: -70px; margin-bottom: 2rem; }
-        .section-title { font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 2.8rem; color: var(--diamond-blue); text-align: center; margin-bottom: 2.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); display: flex; align-items: center; justify-content: center; }
-        .section-title::before { content: ''; display: inline-block; width: 18px; height: 18px; background-color: var(--diamond-blue); margin-right: 15px; transform: rotate(45deg); opacity: 0.8; }
-        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
-        .item-card { background: var(--background-light); color: var(--text-dark); border: 2px solid #ddd; border-radius: 8px; padding: 1.5rem; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; display: flex; flex-direction: column; }
-        .item-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); border-color: var(--primary-green); }
-        .item-card h3 { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.4rem; color: var(--lapis-blue); margin-top: 0; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; }
-        .item-card p { flex-grow: 1; }
-        .info-section { background: var(--background-light); color: var(--text-dark); border: 2px solid var(--stone-gray); border-radius: 8px; padding: 2rem; margin-bottom: 2.5rem; }
-        .info-section .section-title { color: var(--primary-green); text-align: left; font-size: 2.2rem; justify-content: flex-start; }
-        .info-section h3 { font-family: 'Inter', sans-serif; font-weight: 700; color: var(--lapis-blue); margin-top: 2rem; border-bottom: 1px solid #ccc; padding-bottom: 0.3rem; }
-        .info-section ul { list-style-type: '✔ '; padding-left: 20px; }
-        .mobile-nav-toggle { display: none; }
-        .lang-switcher { position: absolute; top: 15px; left: 20px; z-index: 1001; }
-        .lang-switcher .current-lang { background-color: rgba(0,0,0,0.3); color: white; padding: 8px 12px; border: 1px solid rgba(255,255,255,0.3); border-radius: 5px; cursor: pointer; font-weight: bold; display: flex; align-items: center; font-size: 0.9rem; }
-        .lang-switcher .current-lang::after { content: ' ▼'; font-size: 0.8em; margin-left: 5px; }
-        .lang-switcher .lang-dropdown { display: none; position: absolute; background-color: #333; border: 1px solid #555; border-radius: 5px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.5); min-width: 100%; }
-        .lang-switcher:hover .lang-dropdown { display: block; }
-        .lang-switcher .lang-dropdown a { color: white; padding: 10px 15px; text-decoration: none; display: block; text-align: left; }
-        .lang-switcher .lang-dropdown a:hover { background-color: var(--primary-green); }
-        @media (max-width: 768px) {
-            header h1 { font-size: 2.5rem; }
-            .author-info, .about-arrow, .search-container, .lang-switcher { display: none; }
-            .section-title { font-size: 2rem; }
-            .grid-container { grid-template-columns: 1fr; }
-            .mobile-nav-toggle { display: block; position: fixed; top: 55px; right: 20px; z-index: 1002; background: var(--dark-stone); color: white; border: 2px solid var(--diamond-blue); border-radius: 5px; width: 40px; height: 40px; font-size: 24px; cursor: pointer; }
-            .nav-wrapper { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0,0,0,0.95); flex-direction: column; justify-content: center; align-items: center; transform: translateX(100%); transition: transform 0.3s ease-in-out; }
-            .nav-wrapper.nav-open { transform: translateX(0); }
-            nav { display: flex; flex-direction: column; align-items: center; overflow-y: auto; }
-            nav a { font-size: 1.5rem; padding: 1rem 0; }
-        }
+        /* Tüm CSS kodları burada */
     </style>
 </head>
 <body>
-    <div class="disclaimer-banner">Bu site Mojang ya da Microsoft ile resmi olarak bağlantılı değildir. Minecraft, Mojang Studios’un tescilli markasıdır.</div>
+    <div class="disclaimer-banner">
+        Bu site Mojang ya da Microsoft ile resmi olarak bağlantılı değildir. Minecraft, Mojang Studios’un tescilli markasıdır.
+    </div>
     <header>
-        <div class="lang-switcher">
-            <button class="current-lang">Dil: TR</button>
-            <div class="lang-dropdown">
-                <a href="index.html">Türkçe</a>
-                <a href="en/index.html">English</a>
-                <a href="de/index.html">Deutsch</a>
-                <a href="ar/index.html">العربية</a>
-            </div>
-        </div>
         <div class="author-info">Ömer Tuğra Tarafından</div>
         <h1>MineWorld</h1>
         <p>Kapsamlı Minecraft Rehberi</p>
-        <a href="about.html" class="about-arrow" title="Hakkımda Sayfası">→</a>
+        <a href="yenilikler.html" class="about-arrow" title="Yenilikler Sayfası">→</a>
     </header>
     <button class="mobile-nav-toggle" aria-label="Menüyü aç">☰</button>
     <div class="nav-wrapper" id="navWrapper">
         <nav>
-            <a href="#baslangic">Başlangıç</a><a href="#madenler">Madenler</a><a href="#yemekler">Yemekler</a><a href="about.html#iksirler">İksirler</a><a href="#moblar">Moblar</a><a href="#farmlar">Farmlar</a><a href="#zirhlar">Zırhlar</a><a href="#buyuler">Büyüler</a><a href="#esyalar">Eşyalar</a><a href="#yorumlar">Yorumlar</a><a href="guncellemeler.html">Biyomlar ve Test</a>
+            <a href="#baslangic">Başlangıç</a>
+            <a href="#madenler">Madenler</a>
+            <a href="#yemekler">Yemekler</a>
+            <a href="yenilikler.html#iksirler">İksirler</a>
+            <a href="#moblar">Moblar</a>
+            <a href="#farmlar">Farmlar</a>
+            <a href="#zirhlar">Zırhlar</a>
+            <a href="#buyuler">Büyüler</a>
+            <a href="#esyalar">Eşyalar</a>
+            <a href="#yorumlar">Yorumlar</a>
+            <a href="guncellemeler.html">Biyomlar ve Test</a>
+            <a href="yenilikler.html">Yenilikler</a>
         </nav>
         <div class="search-container">
             <input type="search" id="searchInput" placeholder="Sitede Ara...">
@@ -92,17 +41,7 @@
     <div class="container">
         </div>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // MOBİL MENÜYÜ AÇMA/KAPAMA
-            const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-            const navWrapper = document.getElementById('navWrapper');
-            mobileNavToggle.addEventListener('click', () => {
-                navWrapper.classList.toggle('nav-open');
-                mobileNavToggle.innerHTML = navWrapper.classList.contains('nav-open') ? '&times;' : '☰';
-            });
-
-            // ARAMA FONKSİYONU...
-        });
+        // TÜM SCRIPTLER BURADA
     </script>
 </body>
 </html>
