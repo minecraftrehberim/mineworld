@@ -3,237 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biyomlar ve Ustalık Testi - MineWorld</title>
+    <title>Yenilikler ve Rehberler - MineWorld</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=M+PLUS+Rounded+1c:wght@800&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-green: #5E8C4A;
-            --dark-soil: #6B4F38;
-            --stone-gray: #A9A9A9;
-            --dark-stone: #333333;
-            --diamond-blue: #6AE6E6;
-            --lapis-blue: #0048BA;
-            --redstone-red: #D9534F;
-            --background-light: #ffffff;
-            --background-dark: #1c1c1c;
-            --text-light: #E5E5E5;
-            --text-dark: #222222;
-        }
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--background-dark); color: var(--text-light); line-height: 1.8; margin: 0; padding: 0; position: relative; overflow-x: hidden; }
-        .disclaimer-banner { background-color: #ffc107; color: #000; text-align: center; padding: 10px; font-size: 0.9rem; font-weight: bold; }
-        body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-repeat: repeat; background-size: 200px 200px; opacity: 0.04; animation: creeperAndEnderman 120s linear infinite; }
-        @keyframes creeperAndEnderman {
-            0%, 48% { background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48ZyBmaWxsPSIjMDBhODAwIj48cmVjdCB3aWR0aD0iMjUiIGhlaWdodD0iMjUiIHg9IjE4IiB5PSIxOCIvPjxyZWN0IHdpZHRoPSIyNSIgaGVpZ2h0PSIyNSIgeD0iNTciIHk9IjE4Ii8+PHJlY3Qgd2lkdGg9IjI1IiBoZWlnaHQ9IjI1IiB4PSIzNy41IiB5PSI0MyIvPjxyZWN0IHdpZHRoPSIxMi41IiBoZWlnaHQ9IjI1IiB4PSIyNSIgeT0iNTUuNSIvPjxyZWN0IHdpZHRoPSIxMi41IiBoZWlnaHQ9IjI1IiB4PSI2Mi41IiB5PSI1NS41Ii8+PC9nPjwvc3ZnPg=='); }
-            52%, 100% { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGc+PHJlY3Qgd2lkdGg9IjEwMCIgaGVpZHRoPSIxMDAiIGZpbGw9IiMwMDAiLz48cmVjdCB4PSIxNSIgeT0iNDAiIHdpZHRoPSIzMCIgaGVpZ2h0PSIxMCIgZmlsbD0iI0Q5MDBFRCIvPjxyZWN0IHg9IjU1IiB5PSI0MCIgd2lkdGg9IjMwIiBoZWlnaHQ9IjEwIiBmaWxsPSIjRDkwMEVEIi8+PC9nPjwvc3ZnPg=='); }
-        }
-        .author-info { position: absolute; top: 15px; right: 20px; font-size: 0.9rem; color: white; opacity: 0.7; font-style: italic; text-shadow: 1px 1px 2px #000; }
-        header { background-color: var(--primary-green); background-image: linear-gradient(to bottom, #7DB86A, var(--primary-green)); color: white; padding: 2.5rem 1.5rem; text-align: center; border-bottom: 12px solid var(--dark-soil); text-shadow: 3px 3px 5px rgba(0,0,0,0.5); position: relative; }
-        header h1 { font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 4rem; margin: 0; letter-spacing: 2px; }
-        .nav-wrapper { background: var(--dark-stone); padding: 0.5rem 1rem; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 8px rgba(0,0,0,0.3); display: flex; justify-content: center; align-items: center; flex-wrap: wrap; }
-        nav { text-align: center; white-space: nowrap; overflow-x: auto; }
-        nav a { font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; color: white; text-decoration: none; padding: 1rem 1.2rem; transition: color 0.2s; font-size: 1rem; display: inline-block; }
-        nav a:hover { color: var(--diamond-blue); }
-        .container { width: 90%; max-width: 1200px; margin: auto; padding: 2.5rem 0; }
-        .section { padding-top: 70px; margin-top: -70px; margin-bottom: 3rem; }
-        .section-title { font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 2.8rem; color: var(--diamond-blue); text-align: center; margin-bottom: 2.5rem; text-shadow: 0 0 10px var(--diamond-blue); display: flex; align-items: center; justify-content: center; }
-        .section-title::before { content: ''; display: inline-block; width: 18px; height: 18px; background-color: var(--diamond-blue); margin-right: 15px; transform: rotate(45deg); opacity: 0.8; }
-        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
-        .item-card { background: var(--background-light); color: var(--text-dark); border-radius: 8px; padding: 1.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column; border-top: 4px solid var(--primary-green); }
-        .item-card:hover { transform: translateY(-5px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
-        .item-card h3 { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.4rem; color: var(--lapis-blue); margin-top: 0; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; }
-        .item-card p { flex-grow: 1; line-height: 1.6; }
-        .quiz-container { background: var(--background-light); color: var(--text-dark); padding: 2rem; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); border-top: 4px solid var(--primary-green); }
-        .quiz-container h3 { font-size: 1.5rem; margin-bottom: 1rem; }
-        .answer-buttons { display: grid; grid-template-columns: 1fr; gap: 1rem; }
-        .btn { font-family: 'Inter', sans-serif; font-weight: bold; font-size: 1rem; padding: 1rem; border-radius: 5px; border: 2px solid var(--stone-gray); background-color: white; color: var(--text-dark); cursor: pointer; text-align: left; transition: background-color 0.2s, border-color 0.2s; }
-        .btn:hover:not([disabled]) { background-color: #f0f0f0; border-color: var(--lapis-blue); }
-        .btn.correct { background-color: #90ee90; border-color: #2e8b57; }
-        .btn.incorrect { background-color: #ffb6c1; border-color: #dc143c; }
-        .btn:disabled { cursor: not-allowed; opacity: 0.7; }
-        .quiz-footer { display: flex; justify-content: center; margin-top: 2rem; }
-        #nextBtn, #restartBtn, #startBtn { font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 1.2rem; padding: 0.8rem 2rem; border: none; border-radius: 5px; background-color: var(--primary-green); color: white; cursor: pointer; }
-        #resultsScreen { text-align: center; }
-        #rankText { font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 2rem; margin-top: 1rem; color: var(--lapis-blue); }
-        .mobile-nav-toggle { display: none; }
-        @media (max-width: 900px) {
-            .nav-wrapper { justify-content: flex-end; }
-            nav { display: none; }
-            .mobile-nav-toggle { display: block; position: fixed; top: 15px; right: 20px; z-index: 1002; background: var(--dark-stone); color: white; border: 2px solid var(--diamond-blue); border-radius: 5px; width: 40px; height: 40px; font-size: 24px; cursor: pointer; }
-            .nav-wrapper.nav-open { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0,0,0,0.95); flex-direction: column; justify-content: center; align-items: center; transform: translateX(0); transition: transform 0.3s ease-in-out; }
-            .nav-wrapper.nav-open nav { display: flex; flex-direction: column; align-items: center; overflow-y: auto; }
-            .nav-wrapper.nav-open nav a { font-size: 1.5rem; padding: 1rem 0; }
-        }
-        @media (max-width: 768px) {
-            header h1 { font-size: 2.5rem; }
-            .author-info { display: none; }
-            .section-title { font-size: 2rem; }
-            .grid-container { grid-template-columns: 1fr; }
-        }
+        /* index.html ile aynı CSS stilleri */
+        .update-log { list-style-type: none; padding-left: 0; }
+        .update-log li { background-color: #f9f9f9; border: 1px solid #eee; border-left: 5px solid var(--primary-green); padding: 1rem; border-radius: 5px; margin-bottom: 1rem; }
+        .update-log .version { font-weight: bold; color: var(--primary-green); font-size: 1.2rem; }
+        .update-log .date { font-size: 0.9rem; color: #777; }
     </style>
 </head>
 <body>
-    <div class="disclaimer-banner">
-        Bu site Mojang ya da Microsoft ile resmi olarak bağlantılı değildir. Minecraft, Mojang Studios’un tescilli markasıdır.
-    </div>
-
+    <div class="disclaimer-banner">Bu site Mojang ya da Microsoft ile resmi olarak bağlantılı değildir. Minecraft, Mojang Studios’un tescilli markasıdır.</div>
     <header>
         <div class="author-info">Ömer Tuğra Tarafından</div>
         <h1>MineWorld</h1>
         <p>Kapsamlı Minecraft Rehberi</p>
+        <a href="guncellemeler.html" class="about-arrow" title="Biyomlar ve Test Sayfası">→</a>
     </header>
-
     <button class="mobile-nav-toggle" aria-label="Menüyü aç">☰</button>
-
     <div class="nav-wrapper" id="navWrapper">
         <nav>
             <a href="index.html">Ana Sayfa</a>
-            <a href="yenilikler.html">Hakkımda & Rehberler</a>
-            <a href="#biyomlar">Biyomlar</a>
-            <a href="#quiz">Ustalık Testi</a>
-            <a href="index.html#yorumlar">Yorumlar</a>
+            <a href="#hakkimda">Hakkımda</a>
+            <a href="#iksirler">İksirler</a>
+            <a href="#buyuleme">Büyüleme</a>
+            <a href="guncellemeler.html">Biyomlar ve Test</a>
         </nav>
     </div>
-    
     <div class="container">
-        <div id="biyomlar" class="section">
-            <h2 class="section-title">Biyom Rehberi</h2>
-            <div class="grid-container">
-                <div class="item-card"><h3>1. Düzlükler (Plains)</h3><p>Başlangıç için ideal, açık ve geniş alanlardır. Atlar, eşekler ve köyler burada sıkça bulunur. Ayçiçeği sadece bu biyomda doğar.</p></div>
-                <div class="item-card"><h3>2. Orman (Forest)</h3><p>Meşe ve huş ağaçlarıyla kaplıdır. Odun toplamak için harikadır. Kurtlar genellikle burada bulunur. İçinde çiçek ormanı gibi daha renkli alt biyomlar barındırabilir.</p></div>
-                <div class="item-card"><h3>3. Çöl (Desert)</h3><p>Geniş kum tepelerinden oluşur. Kaktüs, şeker kamışı ve ölü çalılar bulunur. Geceleri çok tehlikelidir. Çöl tapınakları ve köyleri barındırır.</p></div>
-                <div class="item-card"><h3>4. Savan (Savanna)</h3><p>Akasya ağaçları ve uzun sarı çimenleriyle tanınır. Lamalar ve atlar burada yaşar. Köylerin bulunma olasılığı yüksektir.</p></div>
-                <div class="item-card"><h3>5. Cangıl (Jungle)</h3><p>Devasa ağaçları, sık bitki örtüsü ve sarmaşıklarıyla keşfetmesi zor bir yerdir. Papağanlar, oselotlar, pandalar ve karpuzlar burada bulunur. Cangıl tapınaklarını gizler.</p></div>
-                <div class="item-card"><h3>6. Tayga (Taiga)</h3><p>Ladin ağaçları ve tatlı orman meyveleriyle doludur. Tilkiler ve kurtlar bu soğuk ormanlarda yaşar. Köyler ve yağmacı karakolları bulunabilir.</p></div>
-                <div class="item-card"><h3>7. Bataklık (Swamp)</h3><p>Sığ, koyu renkli suları ve sarmaşıklarla kaplı meşe ağaçları vardır. Slime'lar geceleri burada sıkça doğar. Cadı kulübeleri sadece bu biyomda bulunur.</p></div>
-                <div class="item-card"><h3>8. Dağlar (Mountains)</h3><p>Yüksek ve engebeli arazilerdir. Zümrüt cevheri sadece burada bulunur. Keçiler bu yamaçlarda zıplar. Karla kaplı zirveleri vardır.</p></div>
-                <div class="item-card"><h3>9. Okyanus (Ocean)</h3><p>Geniş su kütleleridir. Yunuslar, balıklar ve kalamarlar yaşar. Mercan resifleri, batık gemiler ve okyanus anıtları gibi keşfedilecek birçok yapı barındırır.</p></div>
-                <div class="item-card"><h3>10. Mantar Tarlaları</h3><p>En nadir ve en güvenli biyomdur. Yüzeyinde hiçbir düşman canavar doğmaz. Dev mantarlar ve Mooshroom adlı özel ineklerle kaplıdır.</p></div>
-                <div class="item-card"><h3>11. Nether Biyomları</h3><p>Nether, Kızıl Orman, Çarpık Orman, Ruh Kumu Vadisi gibi kendine özgü tehlikeli biyomlara ayrılmıştır. Her birinde farklı canavarlar ve kaynaklar bulunur.</p></div>
-                <div class="item-card"><h3>12. End (The End)</h3><p>Enderman'lerin ve Shulker'ların evi olan, soluk adalardan oluşan bir boyuttur. Ender Ejderhası burada yaşar. End şehirleri ve nadir bulunan Elytra bu boyutta bulunur.</p></div>
-            </div>
         </div>
-
-        <div id="quiz" class="section">
-            <h2 class="section-title">Minecraft Ustalık Testi</h2>
-            <div class="quiz-container">
-                <div id="quizStartScreen">
-                    <h3>10 Zorlu Soru Seni Bekliyor!</h3>
-                    <p>Minecraft hakkında gerçekten ne kadar bilgilisin? Hadi görelim!</p>
-                    <div class="quiz-footer">
-                        <button id="startBtn">Teste Başla</button>
-                    </div>
-                </div>
-                <div id="quizMainScreen" style="display: none;">
-                    <p id="questionCounter" style="text-align:center; font-weight: bold;"></p>
-                    <h3 id="questionText">Soru Yükleniyor...</h3>
-                    <div id="answerButtons" class="answer-buttons"></div>
-                    <div class="quiz-footer">
-                        <button id="nextBtn" style="display: none;">Sonraki Soru</button>
-                    </div>
-                </div>
-                <div id="resultsScreen" style="display: none;">
-                    <h3 id="scoreText"></h3>
-                    <div id="rankText"></div>
-                    <p>Testi tamamladın! Bilgini tazelemek için rehberdeki diğer sayfalara göz atabilirsin.</p>
-                    <div class="quiz-footer">
-                        <button id="restartBtn">Yeniden Dene</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const quizQuestions = [
-                { question: "Bir 'İşaretçi' (Beacon) piramidinin tam güçte çalışması için en alt katmanında kaç adet maden bloğu olmalıdır?", answers: [ { text: "81 (9x9)", correct: true }, { text: "49 (7x7)", correct: false }, { text: "100 (10x10)", correct: false }, { text: "64 (8x8)", correct: false } ] },
-                { question: "Hangi mob, 'Kaplumbağa Kabuğu' yapımında kullanılan parçayı düşürür?", answers: [ { text: "Yetişkin Kaplumbağa", correct: false }, { text: "Bebek Kaplumbağa büyüdüğünde", correct: true }, { text: "Boğulmuş (Drowned)", correct: false }, { text: "Aksolotl", correct: false } ] },
-                { question: "Bir 'Akıntı' (Riptide) büyülü Üç Uçlu Mızrak ile uçabilmek için hangi hava koşulu gereklidir?", answers: [ { text: "Güneşli", correct: false }, { text: "Sadece Gece", correct: false }, { text: "Yağmurlu veya Karlı", correct: true }, { text: "Her zaman uçar", correct: false } ] },
-                { question: "'Wither' boss'unu çağırmak için Ruh Kumu/Toprağı üzerine hangi mob'un kafası yerleştirilmelidir?", answers: [ { text: "İskelet Kafası", correct: false }, { text: "Zombi Kafası", correct: false }, { text: "Creeper Kafası", correct: false }, { text: "Wither İskeleti Kafası", correct: true } ] },
-                { question: "Müzik diskleri (örn: 'Cat', 'Stal') elde etmenin en yaygın yolu nedir?", answers: [ { text: "Zindan sandıklarında bulmak", correct: false }, { text: "Bir İskeletin bir Creeper'ı öldürmesi", correct: true }, { text: "Ender Ejderhası'nı yenmek", correct: false }, { text: "Balık tutmak", correct: false } ] },
-                { question: "Mavi renkli 'Çarpık Orman' (Warped Forest) biyomunda hangi yaratık diğer Nether biyomlarına göre daha az bulunur veya hiç bulunmaz?", answers: [ { text: "Ghast", correct: false }, { text: "Piglin", correct: false }, { text: "Hoglin", correct: true }, { text: "Magma Küpü", correct: false } ] },
-                { question: "Bir Shulker'ın mermisi size çarptığında hangi etkiyi alırsınız?", answers: [ { text: "Yavaşlık", correct: false }, { text: "Zehir", correct: false }, { text: "Havaya Yükselme (Levitation)", correct: true }, { text: "Körlük", correct: false } ] },
-                { question: "Otomatik bir bal farmında, arıların agresifleşmemesi için kovanın altına ne konulur?", answers: [ { text: "Huni (Hopper)", correct: false }, { text: "Kamp Ateşi (Campfire)", correct: true }, { text: "Meşale (Torch)", correct: false }, { text: "Su Bloğu", correct: false } ] },
-                { question: "Aşağıdakilerden hangisi bir 'Kalıcı İksir' (Lingering Potion) yapımında kullanılır?", answers: [ { text: "Barut", correct: false }, { text: "Ghast Gözyaşı", correct: false }, { text: "Fantom Zarı", correct: false }, { text: "Ejderha Nefesi", correct: true } ] },
-                { question: "Bir köylünün mesleğini değiştirmesi için yakınında ne olması gerekir?", answers: [ { text: "Yatak", correct: false }, { text: "Zil", correct: false }, { text: "Sahipsiz bir meslek bloğu", correct: true }, { text: "Demir Golem", correct: false } ] }
-            ];
-            const startBtn = document.getElementById('startBtn');
-            const quizStartScreen = document.getElementById('quizStartScreen');
-            const quizMainScreen = document.getElementById('quizMainScreen');
-            const resultsScreen = document.getElementById('resultsScreen');
-            const questionCounterEl = document.getElementById('questionCounter');
-            const questionTextEl = document.getElementById('questionText');
-            const answerButtonsEl = document.getElementById('answerButtons');
-            const nextBtn = document.getElementById('nextBtn');
-            const restartBtn = document.getElementById('restartBtn');
-            const scoreTextEl = document.getElementById('scoreText');
-            const rankTextEl = document.getElementById('rankText');
-            let currentQuestionIndex, score;
-            startBtn.addEventListener('click', startQuiz);
-            nextBtn.addEventListener('click', () => { currentQuestionIndex++; showQuestion(); });
-            restartBtn.addEventListener('click', startQuiz);
-            function startQuiz() {
-                currentQuestionIndex = 0; score = 0;
-                quizStartScreen.style.display = 'none'; resultsScreen.style.display = 'none';
-                quizMainScreen.style.display = 'block'; nextBtn.style.display = 'none';
-                showQuestion();
-            }
-            function showQuestion() {
-                resetState();
-                const question = quizQuestions[currentQuestionIndex];
-                questionCounterEl.innerText = `${currentQuestionIndex + 1} / ${quizQuestions.length}`;
-                questionTextEl.innerText = question.question;
-                question.answers.forEach(answer => {
-                    const button = document.createElement('button');
-                    button.innerText = answer.text; button.classList.add('btn');
-                    if (answer.correct) { button.dataset.correct = answer.correct; }
-                    button.addEventListener('click', selectAnswer);
-                    answerButtonsEl.appendChild(button);
-                });
-            }
-            function selectAnswer(e) {
-                const selectedBtn = e.target;
-                const isCorrect = selectedBtn.dataset.correct === 'true';
-                if (isCorrect) { score++; }
-                Array.from(answerButtonsEl.children).forEach(button => {
-                    setStatusClass(button, button.dataset.correct === 'true');
-                    button.disabled = true;
-                });
-                if (quizQuestions.length > currentQuestionIndex + 1) { nextBtn.style.display = 'block'; } else { showResults(); }
-            }
-            function showResults() {
-                 quizMainScreen.style.display = 'none'; resultsScreen.style.display = 'block';
-                 scoreTextEl.innerText = `Sonuç: ${quizQuestions.length} sorudan ${score} tanesini doğru bildin!`;
-                 let rank = '';
-                 if (score === 10) rank = "Sen bir Minecraft Gurmesisin!";
-                 else if (score === 9) rank = "Minecraft Doktoru!";
-                 else if (score === 8) rank = "Minecraft Öğretmeni";
-                 else if (score === 7) rank = "Hmmm... Belki daha iyiye...";
-                 else if (score === 6) rank = "Sana bir Minecraft öğretmeni lazım";
-                 else rank = "Tekrardan Çalış! Hiç bir zaman pes etme";
-                 rankTextEl.innerText = rank;
-            }
-            function setStatusClass(element, correct) {
-                clearStatusClass(element);
-                if (correct) { element.classList.add('correct'); } else { element.classList.add('incorrect'); }
-            }
-            function clearStatusClass(element) {
-                element.classList.remove('correct');
-                element.classList.remove('incorrect');
-            }
-            function resetState() {
-                nextBtn.style.display = 'none';
-                while (answerButtonsEl.firstChild) { answerButtonsEl.removeChild(answerButtonsEl.firstChild); }
-            }
-            const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-            const navWrapper = document.getElementById('navWrapper');
-            mobileNavToggle.addEventListener('click', () => {
-                navWrapper.classList.toggle('nav-open');
-                mobileNavToggle.innerHTML = navWrapper.classList.contains('nav-open') ? '&times;' : '☰';
-            });
-        });
+        // Gerekli scriptler
     </script>
 </body>
 </html>
