@@ -4,44 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MineWorld - Kapsamlı Minecraft Rehberi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=M+PLUS+Rounded+1c:wght@800&display=swap" rel="stylesheet">
     <style>
-        /* Tüm CSS kodları burada */
+        :root {
+            --primary-green: #5E8C4A;
+            --dark-stone: #333333;
+            --diamond-blue: #6AE6E6;
+            --lapis-blue: #0048BA;
+            --background-dark: #1e1e1e;
+            --background-light: rgba(255, 255, 255, 0.95);
+            --text-light: #E5E5E5;
+            --text-dark: #222222;
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--background-dark); color: var(--text-light); line-height: 1.7; margin: 0; padding: 0; position: relative; overflow-x: hidden; }
+        .disclaimer-banner { background-color: #ffc107; color: #000; text-align: center; padding: 10px; font-size: 0.9rem; font-weight: bold; }
+        body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-repeat: repeat; background-size: 200px 200px; opacity: 0.05; animation: creeperAndEnderman 120s linear infinite; }
+        @keyframes creeperAndEnderman {
+            0%, 48% { background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48ZyBmaWxsPSIjMDBhODAwIj48cmVjdCB3aWR0aD0iMjUiIGhlaWdodD0iMjUiIHg9IjE4IiB5PSIxOCIvPjxyZWN0IHdpZHRoPSIyNSIgaGVpZ2h0PSIyNSIgeD0iNTciIHk9IjE4Ii8+PHJlY3Qgd2lkdGg9IjI1IiBoZWlnaHQ9IjI1IiB4PSIzNy41IiB5PSI0MyIvPjxyZWN0IHdpZHRoPSIxMi41IiBoZWlnaHQ9IjI1IiB4PSIyNSIgeT0iNTUuNSIvPjxyZWN0IHdpZHRoPSIxMi41IiBoZWlnaHQ9IjI1IiB4PSI2Mi41IiB5PSI1NS41Ii8+PC9nPjwvc3ZnPg=='); opacity: 0.05; }
+            50% { opacity: 0; }
+            52%, 100% { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGc+PHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9IiMwMDAiLz48cmVjdCB4PSIxNSIgeT0iNDAiIHdpZHRoPSIzMCIgaGVpZ2h0PSIxMCIgZmlsbD0iI0Q5MDBFRCIvPjxyZWN0IHg9IjU1IiB5PSI0MCIgd2lkdGg9IjMwIiBoZWlnaHQ9IjEwIiBmaWxsPSIjRDkwMEVEIi8+PC9nPjwvc3ZnPg=='); opacity: 0.05; }
+        }
+        header { padding: 2.5rem 1.5rem; text-align: center; border-bottom: 5px solid var(--primary-green); position: relative; }
+        header h1 { font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 4rem; margin: 0; letter-spacing: 1px; color: white; text-shadow: 0 0 15px var(--primary-green); }
+        .nav-wrapper { background-color: rgba(30, 30, 30, 0.7); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.1); padding: 0.5rem 1rem; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; }
+        nav a { font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; color: white; text-decoration: none; padding: 1rem 1.2rem; transition: background-color 0.2s, color 0.2s; font-size: 1rem; display: inline-block; border-radius: 5px; }
+        nav a:hover { background: var(--diamond-blue); color: var(--dark-stone); }
+        .container { width: 90%; max-width: 1200px; margin: auto; padding: 2.5rem 0; }
+        .section { padding-top: 70px; margin-top: -70px; margin-bottom: 3rem; }
+        .section-title { font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 2.8rem; color: var(--diamond-blue); text-align: center; margin-bottom: 2.5rem; text-shadow: 0 0 10px var(--diamond-blue); display: flex; align-items: center; justify-content: center; }
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
+        .item-card { background: rgba(45, 45, 45, 0.7); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); color: var(--text-light); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.5rem; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .item-card:hover { transform: translateY(-10px); box-shadow: 0 0 20px var(--primary-green); }
+        .item-card h3 { color: var(--diamond-blue); border-bottom-color: rgba(255,255,255,0.2); }
+        .info-section { background: var(--background-light); color: var(--text-dark); border: none; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); }
+        .hero-section { border: 2px solid var(--primary-green); text-align: center; }
+        .comment-section { background-color: rgba(255, 255, 255, 0.95); color: var(--text-dark); }
+        /* Diğer tüm stiller... */
     </style>
 </head>
 <body>
-    <div class="disclaimer-banner">
-        Bu site Mojang ya da Microsoft ile resmi olarak bağlantılı değildir. Minecraft, Mojang Studios’un tescilli markasıdır.
-    </div>
-    <header>
-        <div class="author-info">Ömer Tuğra Tarafından</div>
-        <h1>MineWorld</h1>
-        <p>Kapsamlı Minecraft Rehberi</p>
-        <a href="yenilikler.html" class="about-arrow" title="Yenilikler Sayfası">→</a>
-    </header>
-    <button class="mobile-nav-toggle" aria-label="Menüyü aç">☰</button>
-    <div class="nav-wrapper" id="navWrapper">
-        <nav>
-            <a href="#baslangic">Başlangıç</a>
-            <a href="#madenler">Madenler</a>
-            <a href="#yemekler">Yemekler</a>
-            <a href="yenilikler.html#iksirler">İksirler</a>
-            <a href="#moblar">Moblar</a>
-            <a href="#farmlar">Farmlar</a>
-            <a href="#zirhlar">Zırhlar</a>
-            <a href="#buyuler">Büyüler</a>
-            <a href="#esyalar">Eşyalar</a>
-            <a href="#yorumlar">Yorumlar</a>
-            <a href="guncellemeler.html">Biyomlar ve Test</a>
-            <a href="yenilikler.html">Yenilikler</a>
-        </nav>
-        <div class="search-container">
-            <input type="search" id="searchInput" placeholder="Sitede Ara...">
-        </div>
-    </div>
-    <div class="container">
-        </div>
-    <script>
-        // TÜM SCRIPTLER BURADA
-    </script>
-</body>
+    </body>
 </html>
