@@ -8,7 +8,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=M+PLUS+Rounded+1c:wght@800&display=swap" rel="stylesheet">
     <style>
-        /* index.html ile aynı CSS stilleri burada */
+        /* index.html ile aynı CSS stilleri */
+        .update-log { list-style-type: none; padding-left: 0; }
+        .update-log li { background-color: #f9f9f9; border: 1px solid #eee; border-left: 5px solid var(--primary-green); padding: 1rem; border-radius: 5px; margin-bottom: 1rem; }
+        .update-log .version { font-weight: bold; color: var(--primary-green); font-size: 1.2rem; }
+        .update-log .date { font-size: 0.9rem; color: #777; }
     </style>
 </head>
 <body>
@@ -30,9 +34,32 @@
         </nav>
     </div>
     <div class="container">
+        <div id="hakkimda" class="section about-section">
+            <h2>Hakkımda</h2>
+            <p>
+                Merhaba! Ben Ömer Tuğra. Minecraft'la tanıştığım ilk günden bu yana bu evrene hayran kaldım... (Metnin tam hali)
+            </p>
         </div>
+        <div id="updates" class="section info-section">
+            <h2 class="section-title">Site Güncellemeleri</h2>
+            <ul class="update-log">
+                <li>
+                    <span class="version">Sürüm 15.2</span> - <span class="date">4 Ağustos 2025</span>
+                    <p>Mobil arayüz iyileştirildi. Hakkımda sayfası, İksirler ve yeni Büyüleme Rehberi ile "Yenilikler" sayfasına dönüştürüldü.</p>
+                </li>
+            </ul>
+        </div>
+        <div id="iksirler" class="section">
+            <h2 class="section-title">Profesyonel İksir Rehberi</h2>
+            </div>
+        <div id="buyuleme" class="section">
+            <h2 class="section-title">Büyüleme Rehberi</h2>
+            <div class="info-section">
+                </div>
+        </div>
+    </div>
     <script>
-        // Gerekli scriptler burada
+        // Gerekli scriptler
     </script>
 </body>
 </html>
