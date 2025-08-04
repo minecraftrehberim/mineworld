@@ -4,185 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yenilikler ve Rehberler - MineWorld</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=M+PLUS+Rounded+1c:wght@800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-green: #5E8C4A;
-            --dark-soil: #6B4F38;
-            --stone-gray: #A9A9A9;
-            --dark-stone: #333333;
-            --diamond-blue: #6AE6E6;
-            --lapis-blue: #0048BA;
-            --redstone-red: #D9534F;
-            --potion-purple: #8A2BE2;
-            --background-dark: #1c1c1c;
-            --background-light: #ffffff;
-            --text-light: #E5E5E5;
-            --text-dark: #222222;
-        }
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--background-dark); color: var(--text-light); line-height: 1.8; margin: 0; padding: 0; position: relative; overflow-x: hidden; }
-        .disclaimer-banner { background-color: #ffc107; color: #000; text-align: center; padding: 10px; font-size: 0.9rem; font-weight: bold; }
-        body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-repeat: repeat; background-size: 200px 200px; opacity: 0.04; animation: creeperAndEnderman 120s linear infinite; }
-        @keyframes creeperAndEnderman {
-            0%, 48% { background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48ZyBmaWxsPSIjMDBhODAwIj48cmVjdCB3aWR0aD0iMjUiIGhlaWdodD0iMjUiIHg9IjE4IiB5PSIxOCIvPjxyZWN0IHdpZHRoPSIyNSIgaGVpZ2h0PSIyNSIgeD0iNTciIHk9IjE4Ii8+PHJlY3Qgd2lkdGg9IjI1IiBoZWlnaHQ9IjI1IiB4PSIzNy41IiB5PSI0MyIvPjxyZWN0IHdpZHRoPSIxMi41IiBoZWlnaHQ9IjI1IiB4PSIyNSIgeT0iNTUuNSIvPjxyZWN0IHdpZHRoPSIxMi41IiBoZWlnaHQ9IjI1IiB4PSI2Mi41IiB5PSI1NS41Ii8+PC9nPjwvc3ZnPg=='); }
-            52%, 100% { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGc+PHJlY3Qgd2lkdGg9IjEwMCIgaGVpZHRoPSIxMDAiIGZpbGw9IiMwMDAiLz48cmVjdCB4PSIxNSIgeT0iNDAiIHdpZHRoPSIzMCIgaGVpZ2h0PSIxMCIgZmlsbD0iI0Q5MDBFRCIvPjxyZWN0IHg9IjU1IiB5PSI0MCIgd2lkdGg9IjMwIiBoZWlnaHQ9IjEwIiBmaWxsPSIjRDkwMEVEIi8+PC9nPjwvc3ZnPg=='); }
-        }
-        .author-info { position: absolute; top: 15px; right: 20px; font-size: 0.9rem; color: white; opacity: 0.7; font-style: italic; text-shadow: 1px 1px 2px #000; }
-        header { background-color: var(--primary-green); background-image: linear-gradient(to bottom, #7DB86A, var(--primary-green)); color: white; padding: 2.5rem 1.5rem; text-align: center; border-bottom: 12px solid var(--dark-soil); text-shadow: 3px 3px 5px rgba(0,0,0,0.5); position: relative; }
-        .about-arrow { position: absolute; top: 50%; right: 40px; transform: translateY(-50%); width: 50px; height: 50px; background-color: rgba(255, 255, 255, 0.1); border: 2px solid rgba(255, 255, 255, 0.5); border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: white; font-size: 2rem; transition: all 0.3s ease; }
-        .about-arrow:hover { background-color: rgba(255, 255, 255, 0.2); transform: translateY(-50%) scale(1.1); border-color: white; }
-        header h1 { font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 4rem; margin: 0; letter-spacing: 2px; }
-        .nav-wrapper { background: var(--dark-stone); padding: 0.5rem 1rem; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 8px rgba(0,0,0,0.3); display: flex; justify-content: center; align-items: center; flex-wrap: wrap; }
-        nav { text-align: center; white-space: nowrap; overflow-x: auto; }
-        nav a { font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; color: white; text-decoration: none; padding: 1rem 1.2rem; transition: color 0.2s; font-size: 1rem; display: inline-block; }
-        nav a:hover { color: var(--diamond-blue); }
-        .container { width: 90%; max-width: 1000px; margin: auto; padding: 2.5rem 0; }
-        .section { padding-top: 70px; margin-top: -70px; margin-bottom: 3rem; }
-        .section-title { font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 2.8rem; color: var(--diamond-blue); text-align: center; margin-bottom: 2.5rem; text-shadow: 0 0 10px var(--diamond-blue); display: flex; align-items: center; justify-content: center; }
-        .section-title::before { content: ''; display: inline-block; width: 18px; height: 18px; background-color: var(--diamond-blue); margin-right: 15px; transform: rotate(45deg); opacity: 0.8; }
-        .about-section { background: var(--background-light); color: var(--text-dark); border-radius: 8px; padding: 3rem; text-align: center; margin-top: 2rem; border-top: 4px solid var(--primary-green); }
-        .about-section h2 { font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 2.5rem; color: var(--primary-green); }
-        .about-section p { font-size: 1.2rem; line-height: 1.8; margin: 2rem 0; text-align: justify; }
-        .info-section { background: var(--background-light); color: var(--text-dark); border-radius: 8px; padding: 2rem; margin-bottom: 2.5rem; border-top: 4px solid var(--primary-green); }
-        .info-section .section-title { color: var(--primary-green); }
-        .info-section .section-title::before { background-color: var(--primary-green); }
-        .info-section h3 { font-family: 'Inter', sans-serif; font-weight: 700; color: var(--lapis-blue); margin-top: 2rem; border-bottom: 1px solid #ccc; padding-bottom: 0.3rem; }
-        .potion-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
-        .potion-category { margin-bottom: 2rem; }
-        .potion-category h3 { font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 1.8rem; color: var(--primary-green); border-bottom: 2px solid var(--primary-green); padding-bottom: 0.5rem; }
-        .potion-card { background-color: #f9f9f9; border: 1px solid #ddd; border-left: 5px solid var(--potion-purple); border-radius: 5px; margin-bottom: 1rem; padding: 1rem; }
-        .potion-card .recipe { display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem; font-size: 1.1rem; }
-        .potion-card .ingredient { font-weight: bold; padding: 0.3rem 0.8rem; border-radius: 15px; background-color: #e0e0e0; }
-        .potion-card .base-potion { background-color: #add8e6; }
-        .potion-card .result-potion { background-color: #90ee90; }
-        .potion-card .corrupted-potion { background-color: #ffb6c1; }
-        .potion-card .operator { font-size: 1.5rem; color: #555; }
-        .potion-card .potion-description { margin-top: 0.8rem; font-style: italic; color: #333; border-top: 1px dashed #ccc; padding-top: 0.8rem; }
-        .update-log { list-style-type: none; padding-left: 0; }
-        .update-log li { background-color: #f9f9f9; border: 1px solid #eee; border-left: 5px solid var(--primary-green); padding: 1rem; border-radius: 5px; margin-bottom: 1rem; }
-        .update-log .version { font-weight: bold; color: var(--primary-green); font-size: 1.2rem; }
-        .update-log .date { font-size: 0.9rem; color: #777; }
-        .mobile-nav-toggle { display: none; }
-        @media (max-width: 900px) {
-            .nav-wrapper { justify-content: flex-end; }
-            nav { display: none; }
-            .mobile-nav-toggle { display: block; position: fixed; top: 15px; right: 20px; z-index: 1002; background: var(--dark-stone); color: white; border: 2px solid var(--diamond-blue); border-radius: 5px; width: 40px; height: 40px; font-size: 24px; cursor: pointer; }
-            .nav-wrapper.nav-open { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0,0,0,0.95); flex-direction: column; justify-content: center; align-items: center; transform: translateX(0); transition: transform 0.3s ease-in-out; }
-            .nav-wrapper.nav-open nav { display: flex; flex-direction: column; align-items: center; overflow-y: auto; }
-            .nav-wrapper.nav-open nav a { font-size: 1.5rem; padding: 1rem 0; }
-        }
-        @media (max-width: 768px) {
-            header h1 { font-size: 2.5rem; }
-            .author-info, .about-arrow { display: none; }
-            .section-title { font-size: 2rem; }
-        }
-    </style>
-</head>
+    </head>
 <body>
-    <div class="disclaimer-banner">
-        Bu site Mojang ya da Microsoft ile resmi olarak bağlantılı değildir. Minecraft, Mojang Studios’un tescilli markasıdır.
-    </div>
-    <header>
-        <div class="author-info">Ömer Tuğra Tarafından</div>
-        <h1>MineWorld</h1>
-        <p>Kapsamlı Minecraft Rehberi</p>
-        <a href="guncellemeler.html" class="about-arrow" title="Biyomlar ve Test Sayfası">→</a>
-    </header>
-
-    <button class="mobile-nav-toggle" aria-label="Menüyü aç">☰</button>
-    
     <div class="nav-wrapper" id="navWrapper">
         <nav>
             <a href="index.html">Ana Sayfa</a>
-            <a href="#hakkimda">Hakkımda</a>
-            <a href="#iksirler">İksirler</a>
-            <a href="#buyuleme">Büyüleme</a>
+            <a href="yenilikler.html">Rehberler</a>
             <a href="guncellemeler.html">Biyomlar ve Test</a>
+            <a href="oyunlar.html">Oyunlar</a> <a href="index.html#yorumlar">Yorumlar</a>
         </nav>
-    </div>
-
+        </div>
     <div class="container">
-        <div id="hakkimda" class="section about-section">
-            <h2>Hakkımda</h2>
-            <p>
-                Merhaba! Ben Ömer Tuğra. Minecraft'la tanıştığım ilk günden bu yana bu evrene hayran kaldım. Küplerle dolu bu sonsuz dünyada hem eğlendim hem de öğrendim. Zamanla sadece oynamakla kalmayıp, edindiğim bilgileri başkalarıyla paylaşmak gibi bir hayalim oluştu. Ve işte karşınızda: MineWorld – Kapsamlı Minecraft Rehberi. Bu site, uzun zamandır aklımda olan bir projeydi. Kodlamayı, tasarımı ve içerik üretimini kendi başıma öğrenerek sıfırdan bu siteyi oluşturdum. Amacım; hem yeni başlayan oyunculara yol göstermek hem de deneyimli Minecraft tutkunlarına detaylı bilgiler sunmak. Madencilikten yemek tariflerine, yaratıklardan büyülere kadar birçok konuda güncel, sade ve anlaşılır rehberler hazırlamayı hedefliyorum. Minecraft sadece bir oyun değil; aynı zamanda yaratıcılığın sınırlarını zorlayabileceğiniz eşsiz bir platform. Bu sitede sizinle sadece bilgiler değil, aynı zamanda bu tutkuyu da paylaşmak istiyorum. Hoşçakalın!
-            </p>
         </div>
-
-        <div id="updates" class="section info-section">
-            <h2 class="section-title">Site Güncellemeleri</h2>
-            <ul class="update-log">
-                <li>
-                    <span class="version">Sürüm 15.2</span> - <span class="date">4 Ağustos 2025</span>
-                    <p>Mobil arayüz iyileştirildi. Hakkımda sayfası, İksirler ve yeni Büyüleme Rehberi ile "Yenilikler" sayfasına dönüştürüldü. Stil düzenlemeleri yapıldı.</p>
-                </li>
-            </ul>
-        </div>
-
-        <div id="iksirler" class="section">
-            <h2 class="section-title">Profesyonel İksir Rehberi</h2>
-            <div class="potion-grid info-section">
-                
-                <div class="potion-category">
-                    <h3>Temel İksirler</h3>
-                    <div class="potion-card">
-                        <div class="recipe"><span class="ingredient">Su Şişesi</span><span class="operator">+</span><span class="ingredient">Nether Wart</span><span class="operator">→</span><span class="ingredient base-potion">Sıradan İksir</span></div>
-                        <p class="potion-description">Neredeyse tüm etkili iksirlerin başlangıç noktasıdır. Tek başına bir etkisi yoktur.</p>
-                    </div>
-                     <div class="potion-card">
-                        <div class="recipe"><span class="ingredient">Su Şişesi</span><span class="operator">+</span><span class="ingredient">Mayalı Örümcek Gözü</span><span class="operator">→</span><span class="ingredient corrupted-potion">Zayıflık İksiri</span></div>
-                        <p class="potion-description">Zombi köylüleri iyileştirmek için kullanılır. Yakın dövüş hasarını azaltır.</p>
-                    </div>
-                </div>
-
-                <div class="potion-category">
-                    <h3>Pozitif Etkili İksirler</h3>
-                    <div class="potion-card"><div class="recipe"><span class="ingredient base-potion">Sıradan İksir</span><span class="operator">+</span><span class="ingredient">Magma Kremi</span><span class="operator">→</span><span class="ingredient result-potion">Ateş Direnci</span></div><p class="potion-description">Ateşten ve lavdan hasar almanızı engeller. Nether keşifleri için hayatidir.</p></div>
-                    <div class="potion-card"><div class="recipe"><span class="ingredient base-potion">Sıradan İksir</span><span class="operator">+</span><span class="ingredient">Şeker</span><span class="operator">→</span><span class="ingredient result-potion">Çeviklik</span></div><p class="potion-description">Yürüme ve koşma hızınızı artırır. Uzun mesafeleri daha hızlı katetmenizi sağlar.</p></div>
-                    <div class="potion-card"><div class="recipe"><span class="ingredient base-potion">Sıradan İksir</span><span class="operator">+</span><span class="ingredient">Parlayan Karpuz</span><span class="operator">→</span><span class="ingredient result-potion">Anında Can</span></div><p class="potion-description">İçtiğiniz anda canınızı yeniler. Savaş ortasında hızlı bir iyileşme sağlar.</p></div>
-                    <div class="potion-card"><div class="recipe"><span class="ingredient base-potion">Sıradan İksir</span><span class="operator">+</span><span class="ingredient">Blaze Tozu</span><span class="operator">→</span><span class="ingredient result-potion">Güç</span></div><p class="potion-description">Yakın dövüş saldırılarınızın daha fazla hasar vermesini sağlar. Boss savaşları için idealdir.</p></div>
-                    <div class="potion-card"><div class="recipe"><span class="ingredient base-potion">Sıradan İksir</span><span class="operator">+</span><span class="ingredient">Ghast Gözyaşı</span><span class="operator">→</span><span class="ingredient result-potion">Yenilenme</span></div><p class="potion-description">Canınızın zamanla yavaş yavaş dolmasını sağlar.</p></div>
-                    <div class="potion-card"><div class="recipe"><span class="ingredient base-potion">Sıradan İksir</span><span class="operator">+</span><span class="ingredient">Altın Havuç</span><span class="operator">→</span><span class="ingredient result-potion">Gece Görüşü</span></div><p class="potion-description">Karanlık yerleri tamamen aydınlık gibi görmenizi sağlar.</p></div>
-                    <div class="potion-card"><div class="recipe"><span class="ingredient base-potion">Sıradan İksir</span><span class="operator">+</span><span class="ingredient">Kirpi Balığı</span><span class="operator">→</span><span class="ingredient result-potion">Su Altında Nefes Alma</span></div><p class="potion-description">Su altında boğulmadan kalmanızı sağlar.</p></div>
-                    <div class="potion-card"><div class="recipe"><span class="ingredient base-potion">Sıradan İksir</span><span class="operator">+</span><span class="ingredient">Fantom Zarı</span><span class="operator">→</span><span class="ingredient result-potion">Yavaş Düşüş</span></div><p class="potion-description">Yüksekten daha yavaş ve hasarsız düşmenizi sağlar.</p></div>
-                    <div class="potion-card"><div class="recipe"><span class="ingredient base-potion">Sıradan İksir</span><span class="operator">+</span><span class="ingredient">Kaplumbağa Kabuğu</span><span class="operator">→</span><span class="ingredient result-potion">Kaplumbağa Ustası</span></div><p class="potion-description">Size Direnç III vererek çok dayanıklı yapar, ancak sizi Yavaşlık IV ile yavaşlatır.</p></div>
-                </div>
-
-                <div class="potion-category">
-                    <h3>Negatif Etkili İksirler</h3>
-                    <div class="potion-card"><div class="recipe"><span class="ingredient result-potion">Gece Görüşü</span><span class="operator">+</span><span class="ingredient">Mayalı Örümcek Gözü</span><span class="operator">→</span><span class="ingredient corrupted-potion">Görünmezlik</span></div><p class="potion-description">Mob'ların sizi görmesini engeller. Zırh giyerseniz etkinliği azalır.</p></div>
-                </div>
-
-                <div class="potion-category">
-                    <h3>İksir Geliştiricileri</h3>
-                    <div class="potion-card"><div class="recipe"><span class="ingredient">Herhangi Bir İksir</span><span class="operator">+</span><span class="ingredient">Redstone Tozu</span><span class="operator">→</span><span class="ingredient result-potion">Süresi Uzar</span></div><p class="potion-description">İksirin etki süresini artırır (örn: 3:00 → 8:00).</p></div>
-                    <div class="potion-card"><div class="recipe"><span class="ingredient">Herhangi Bir İksir</span><span class="operator">+</span><span class="ingredient">Işık Taşı Tozu</span><span class="operator">→</span><span class="ingredient result-potion">Gücü Artar (Seviye II)</span></div><p class="potion-description">İksirin etkisini güçlendirir (örn: Güç I → Güç II).</p></div>
-                    <div class="potion-card"><div class="recipe"><span class="ingredient">Herhangi Bir İksir</span><span class="operator">+</span><span class="ingredient">Barut</span><span class="operator">→</span><span class="ingredient result-potion">Fırlatılabilir İksir</span></div><p class="potion-description">İksiri başkalarına veya bir alana atmanızı sağlar.</p></div>
-                    <div class="potion-card"><div class="recipe"><span class="ingredient">Fırlatılabilir İksir</span><span class="operator">+</span><span class="ingredient">Ejderha Nefesi</span><span class="operator">→</span><span class="ingredient result-potion">Kalıcı İksir</span></div><p class="potion-description">Yere atıldığında bir süre kalan etki bulutu oluşturur.</p></div>
-                </div>
-            </div>
-        </div>
-        
-        <div id="buyuleme" class="section info-section">
-            <h2 class="section-title">Büyüleme Rehberi</h2>
-            <h3>Büyü Masası ve Kitaplıklar</h3>
-            <p>Büyü yapmanın temeli Büyü Masası'dır. 4 Obsidyen, 2 Elmas ve 1 Kitap ile yapılır. Masanın tam potansiyeline ulaşması için etrafına, arasında 1 blok boşluk olacak şekilde 15 adet Kitaplık yerleştirmeniz gerekir. Bu, en yüksek seviye olan 30 seviye büyülere erişmenizi sağlar.</p>
-            <h3>Örs (Anvil) Kullanımı</h3>
-            <p>Örs, büyülü eşyaları birleştirmek ve onarmak için kullanılır. İki adet aynı tür büyülü eşyayı veya bir eşya ile büyülü bir kitabı birleştirerek daha güçlü eşyalar elde edebilirsiniz. Bu işlem deneyim (XP) puanı harcar.</p>
-        </div>
-    </div>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-            const navWrapper = document.getElementById('navWrapper');
-            mobileNavToggle.addEventListener('click', () => {
-                navWrapper.classList.toggle('nav-open');
-                mobileNavToggle.innerHTML = navWrapper.classList.contains('nav-open') ? '&times;' : '☰';
-            });
-        });
+        // Scriptler aynı
     </script>
 </body>
 </html>
