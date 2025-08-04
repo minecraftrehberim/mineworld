@@ -8,27 +8,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=M+PLUS+Rounded+1c:wght@800&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-green: #5E8C4A;
-            --dark-soil: #6B4F38;
-            --stone-gray: #A9A9A9;
-            --dark-stone: #333333;
-            --diamond-blue: #6AE6E6;
-            --lapis-blue: #0048BA;
-            --redstone-red: #D9534F;
-            --potion-purple: #8A2BE2;
-            --background-light: #ffffff;
-            --background-dark: #1c1c1c;
-            --text-light: #E5E5E5;
-            --text-dark: #222222;
-        }
+        :root { --primary-green: #5E8C4A; --dark-soil: #6B4F38; --stone-gray: #A9A9A9; --dark-stone: #333333; --diamond-blue: #6AE6E6; --lapis-blue: #0048BA; --gold-accent: #FFD700; --background-dark: #1c1c1c; --background-light: #ffffff; --text-light: #E5E5E5; --text-dark: #222222; }
         html { scroll-behavior: smooth; }
         body { font-family: 'Inter', sans-serif; background-color: var(--background-dark); color: var(--text-light); line-height: 1.8; margin: 0; padding: 0; position: relative; overflow-x: hidden; }
         .disclaimer-banner { background-color: #ffc107; color: #000; text-align: center; padding: 10px; font-size: 0.9rem; font-weight: bold; }
         body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-repeat: repeat; background-size: 200px 200px; opacity: 0.04; animation: creeperAndEnderman 120s linear infinite; }
         @keyframes creeperAndEnderman {
             0%, 48% { background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48ZyBmaWxsPSIjMDBhODAwIj48cmVjdCB3aWR0aD0iMjUiIGhlaWdodD0iMjUiIHg9IjE4IiB5PSIxOCIvPjxyZWN0IHdpZHRoPSIyNSIgaGVpZ2h0PSIyNSIgeD0iNTciIHk9IjE4Ii8+PHJlY3Qgd2lkdGg9IjI1IiBoZWlnaHQ9IjI1IiB4PSIzNy41IiB5PSI0MyIvPjxyZWN0IHdpZHRoPSIxMi41IiBoZWlnaHQ9IjI1IiB4PSIyNSIgeT0iNTUuNSIvPjxyZWN0IHdpZHRoPSIxMi41IiBoZWlnaHQ9IjI1IiB4PSI2Mi41IiB5PSI1NS41Ii8+PC9nPjwvc3ZnPg=='); }
-            52%, 100% { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGc+PHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9IiMwMDAiLz48cmVjdCB4PSIxNSIgeT0iNDAiIHdpZHRoPSIzMCIgaGVpZ2h0PSIxMCIgZmlsbD0iI0Q5MDBFRCIvPjxyZWN0IHg9IjU1IiB5PSI0MCIgd2lkdGg9IjMwIiBoZWlnaHQ9IjEwIiBmaWxsPSIjRDkwMEVEIi8+PC9nPjwvc3ZnPg=='); }
+            52%, 100% { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGc+PHJlY3Qgd2lkdGg9IjEwMCIgaGVpZHRoPSIxMDAiIGZpbGw9IiMwMDAiLz48cmVjdCB4PSIxNSIgeT0iNDAiIHdpZHRoPSIzMCIgaGVpZ2h0PSIxMCIgZmlsbD0iI0Q5MDBFRCIvPjxyZWN0IHg9IjU1IiB5PSI0MCIgd2lkdGg9IjMwIiBoZWlnaHQ9IjEwIiBmaWxsPSIjRDkwMEVEIi8+PC9nPjwvc3ZnPg=='); }
         }
         .author-info { position: absolute; top: 15px; right: 20px; font-size: 0.9rem; color: white; opacity: 0.7; font-style: italic; text-shadow: 1px 1px 2px #000; }
         header { background-color: var(--primary-green); background-image: linear-gradient(to bottom, #7DB86A, var(--primary-green)); color: white; padding: 2.5rem 1.5rem; text-align: center; border-bottom: 12px solid var(--dark-soil); text-shadow: 3px 3px 5px rgba(0,0,0,0.5); position: relative; }
@@ -82,18 +69,14 @@
     </style>
 </head>
 <body>
-    <div class="disclaimer-banner">
-        Bu site Mojang ya da Microsoft ile resmi olarak bağlantılı değildir. Minecraft, Mojang Studios’un tescilli markasıdır.
-    </div>
+    <div class="disclaimer-banner">Bu site Mojang ya da Microsoft ile resmi olarak bağlantılı değildir. Minecraft, Mojang Studios’un tescilli markasıdır.</div>
     <header>
         <div class="author-info">Ömer Tuğra Tarafından</div>
         <h1>MineWorld</h1>
         <p>Kapsamlı Minecraft Rehberi</p>
         <a href="guncellemeler.html" class="about-arrow" title="Biyomlar ve Test Sayfası">→</a>
     </header>
-
     <button class="mobile-nav-toggle" aria-label="Menüyü aç">☰</button>
-    
     <div class="nav-wrapper" id="navWrapper">
         <nav>
             <a href="index.html">Ana Sayfa</a>
@@ -101,9 +84,9 @@
             <a href="#iksirler">İksirler</a>
             <a href="#buyuleme">Büyüleme</a>
             <a href="guncellemeler.html">Biyomlar ve Test</a>
+            <a href="oyunlar.html">Oyunlar</a>
         </nav>
     </div>
-
     <div class="container">
         <div id="hakkimda" class="section about-section">
             <h2>Hakkımda</h2>
@@ -142,8 +125,6 @@
                     <h3>Pozitif Etkili İksirler</h3>
                     <div class="potion-card"><div class="recipe"><span class="ingredient base-potion">Sıradan İksir</span><span class="operator">+</span><span class="ingredient">Magma Kremi</span><span class="operator">→</span><span class="ingredient result-potion">Ateş Direnci</span></div><p class="potion-description">Ateşten ve lavdan hasar almanızı engeller. Nether keşifleri için hayatidir.</p></div>
                     <div class="potion-card"><div class="recipe"><span class="ingredient base-potion">Sıradan İksir</span><span class="operator">+</span><span class="ingredient">Şeker</span><span class="operator">→</span><span class="ingredient result-potion">Çeviklik</span></div><p class="potion-description">Yürüme ve koşma hızınızı artırır. Uzun mesafeleri daha hızlı katetmenizi sağlar.</p></div>
-                    <div class="potion-card"><div class="recipe"><span class="ingredient base-potion">Sıradan İksir</span><span class="operator">+</span><span class="ingredient">Parlayan Karpuz</span><span class="operator">→</span><span class="ingredient result-potion">Anında Can</span></div><p class="potion-description">İçtiğiniz anda canınızı yeniler. Savaş ortasında hızlı bir iyileşme sağlar.</p></div>
-                    <div class="potion-card"><div class="recipe"><span class="ingredient base-potion">Sıradan İksir</span><span class="operator">+</span><span class="ingredient">Blaze Tozu</span><span class="operator">→</span><span class="ingredient result-potion">Güç</span></div><p class="potion-description">Yakın dövüş saldırılarınızın daha fazla hasar vermesini sağlar. Boss savaşları için idealdir.</p></div>
                 </div>
 
                 <div class="potion-category">
@@ -153,8 +134,7 @@
 
                 <div class="potion-category">
                     <h3>İksir Geliştiricileri</h3>
-                    <div class="potion-card"><div class="recipe"><span class="ingredient">Herhangi Bir Süreli İksir</span><span class="operator">+</span><span class="ingredient">Redstone Tozu</span><span class="operator">→</span><span class="ingredient result-potion">Süresi Uzar</span></div><p class="potion-description">İksirin etki süresini artırır (örn: 3:00 → 8:00).</p></div>
-                    <div class="potion-card"><div class="recipe"><span class="ingredient">Herhangi Bir Seviyeli İksir</span><span class="operator">+</span><span class="ingredient">Işık Taşı Tozu</span><span class="operator">→</span><span class="ingredient result-potion">Gücü Artar (Seviye II)</span></div><p class="potion-description">İksirin etkisini güçlendirir (örn: Güç I → Güç II).</p></div>
+                    <div class="potion-card"><div class="recipe"><span class="ingredient">Herhangi Bir İksir</span><span class="operator">+</span><span class="ingredient">Redstone Tozu</span><span class="operator">→</span><span class="ingredient result-potion">Süresi Uzar</span></div><p class="potion-description">İksirin etki süresini artırır (örn: 3:00 → 8:00).</p></div>
                 </div>
             </div>
         </div>
