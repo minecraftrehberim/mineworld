@@ -21,18 +21,11 @@
             --text-dark: #222222;
         }
         html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--background-dark); color: var(--text-light); line-height: 1.8; margin: 0; padding: 0; position: relative; overflow-x: hidden; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--background-dark); color: var(--text-light); line-height: 1.8; margin: 0; padding: 0; }
         .disclaimer-banner { background-color: #ffc107; color: #000; text-align: center; padding: 10px; font-size: 0.9rem; font-weight: bold; }
-        body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-repeat: repeat; background-size: 200px 200px; opacity: 0.04; animation: creeperAndEnderman 120s linear infinite; }
-        @keyframes creeperAndEnderman {
-            0%, 48% { background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48ZyBmaWxsPSIjMDBhODAwIj48cmVjdCB3aWR0aD0iMjUiIGhlaWdodD0iMjUiIHg9IjE4IiB5PSIxOCIvPjxyZWN0IHdpZHRoPSIyNSIgaGVpZ2h0PSIyNSIgeD0iNTciIHk9IjE4Ii8+PHJlY3Qgd2lkdGg9IjI1IiBoZWlnaHQ9IjI1IiB4PSIzNy41IiB5PSI0MyIvPjxyZWN0IHdpZHRoPSIxMi41IiBoZWlnaHQ9IjI1IiB4PSIyNSIgeT0iNTUuNSIvPjxyZWN0IHdpZHRoPSIxMi41IiBoZWlnaHQ9IjI1IiB4PSI2Mi41IiB5PSI1NS41Ii8+PC9nPjwvc3ZnPg=='); }
-            52%, 100% { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGc+PHJlY3Qgd2lkdGg9IjEwMCIgaGVpZHRoPSIxMDAiIGZpbGw9IiMwMDAiLz48cmVjdCB4PSIxNSIgeT0iNDAiIHdpZHRoPSIzMCIgaGVpZ2h0PSIxMCIgZmlsbD0iI0Q5MDBFRCIvPjxyZWN0IHg9IjU1IiB5PSI0MCIgd2lkdGg9IjMwIiBoZWlnaHQ9IjEwIiBmaWxsPSIjRDkwMEVEIi8+PC9nPjwvc3ZnPg=='); }
-        }
-        .author-info { position: absolute; top: 15px; right: 20px; font-size: 0.9rem; color: white; opacity: 0.7; font-style: italic; text-shadow: 1px 1px 2px #000; }
         header { background-color: var(--primary-green); background-image: linear-gradient(to bottom, #7DB86A, var(--primary-green)); color: white; padding: 2.5rem 1.5rem; text-align: center; border-bottom: 12px solid var(--dark-soil); text-shadow: 3px 3px 5px rgba(0,0,0,0.5); position: relative; }
         header h1 { font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 4rem; margin: 0; letter-spacing: 2px; }
         .nav-wrapper { background: var(--dark-stone); padding: 0.5rem 1rem; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 8px rgba(0,0,0,0.3); display: flex; justify-content: center; align-items: center; flex-wrap: wrap; }
-        nav { text-align: center; white-space: nowrap; overflow-x: auto; }
         nav a { font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; color: white; text-decoration: none; padding: 1rem 1.2rem; transition: color 0.2s; font-size: 1rem; display: inline-block; }
         nav a:hover { color: var(--diamond-blue); }
         .container { width: 90%; max-width: 900px; margin: auto; padding: 2.5rem 0; }
@@ -43,11 +36,35 @@
         .game-container h3 { font-size: 1.8rem; color: var(--lapis-blue); }
         .btn { font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 1.1rem; padding: 0.8rem 1.5rem; border: none; border-radius: 5px; background-color: var(--primary-green); color: white; cursor: pointer; transition: background-color 0.2s; }
         .btn:hover { background-color: #4a7a3a; }
-        .rating-buttons { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin: 1.5rem 0; }
-        .rating-buttons button { background-color: var(--stone-gray); font-size: 1.2rem; }
-        #rankItemName { font-size: 2rem; color: var(--lapis-blue); font-weight: bold; margin: 1rem 0; }
-        #rankedList { list-style-position: inside; text-align: left; font-size: 1.2rem; }
-        #rankedList li { padding: 0.2rem 0; }
+        
+        /* SIRALAMA OYUNU YENİ STİLLERİ */
+        .item-to-rank {
+            background-color: var(--diamond-blue);
+            color: var(--dark-stone);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+        .item-to-rank p { margin: 0; font-size: 1.2rem; }
+        .item-to-rank h4 { margin: 0; font-family: 'M PLUS Rounded 1c', sans-serif; font-size: 2.5rem; }
+        #currentRankingList { list-style-type: none; padding: 0; margin: 1rem 0; }
+        #currentRankingList li { display: flex; flex-direction: column; align-items: center; }
+        .ranked-item { background-color: #f0f0f0; padding: 0.8rem; border-radius: 5px; font-size: 1.2rem; font-weight: bold; margin: 0.5rem 0; width: 80%; }
+        .rank-here-btn {
+            width: 80%;
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            background-color: #e7f4e7;
+            border: 2px dashed var(--primary-green);
+            color: var(--primary-green);
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .rank-here-btn:hover { background-color: #d4ead4; }
+        #finalRankingList { font-size: 1.3rem; text-align: left; list-style-position: inside; }
+
+        /* TAHMİN OYUNU STİLLERİ */
         #clueList { list-style-type: none; padding-left: 0; margin: 1.5rem 0; }
         #clueList li { background-color: #f0f0f0; padding: 0.5rem; border-radius: 4px; margin-bottom: 0.5rem; font-weight: bold; }
         #guessInput { width: 80%; max-width: 400px; box-sizing: border-box; padding: 0.8rem; font-size: 1.1rem; margin-bottom: 1rem; border-radius: 5px; border: 2px solid #ccc; }
@@ -68,18 +85,9 @@
     </style>
 </head>
 <body>
-    <div class="disclaimer-banner">
-        Bu site Mojang ya da Microsoft ile resmi olarak bağlantılı değildir. Minecraft, Mojang Studios’un tescilli markasıdır.
-    </div>
-
-    <header>
-        <div class="author-info">Ömer Tuğra Tarafından</div>
-        <h1>MineWorld</h1>
-        <p>Kapsamlı Minecraft Rehberi</p>
-    </header>
-    
+    <div class="disclaimer-banner">Bu site Mojang ya da Microsoft ile resmi olarak bağlantılı değildir. Minecraft, Mojang Studios’un tescilli markasıdır.</div>
+    <header><h1>MineWorld</h1><p>Kapsamlı Minecraft Rehberi</p></header>
     <button class="mobile-nav-toggle" aria-label="Menüyü aç">☰</button>
-
     <div class="nav-wrapper" id="navWrapper">
         <nav>
             <a href="index.html">Ana Sayfa</a>
@@ -89,30 +97,27 @@
             <a href="index.html#yorumlar">Yorumlar</a>
         </nav>
     </div>
-
     <div class="container">
         <div id="ranking-game" class="section">
             <h2 class="section-title">Sıralama Oyunu</h2>
             <div class="game-container">
                 <div id="rank-start-screen">
                     <h3>Minecraft Mob Sıralaması</h3>
-                    <p>Karşına rastgele 10 mob gelecek. Onları ne kadar sevdiğine göre 1 (en az) ile 5 (en çok) arasında puanla. Sonda kendi kişisel sıralamanı gör!</p>
+                    <p>Karşına rastgele 10 mob gelecek. Onları mevcut listeye göre kendi adaletince sırala ve en sonda kişisel "En İyiler" listeni gör!</p>
                     <button id="startRankBtn" class="btn">Sıralamaya Başla</button>
                 </div>
                 <div id="rank-main-screen" style="display: none;">
                     <p id="rankCounter" style="font-weight: bold; color: #555;"></p>
-                    <h3 id="rankItemName">Yükleniyor...</h3>
-                    <div class="rating-buttons" id="ratingButtons">
-                        <button class="btn" data-value="1">1 ★</button>
-                        <button class="btn" data-value="2">2 ★</button>
-                        <button class="btn" data-value="3">3 ★</button>
-                        <button class="btn" data-value="4">4 ★</button>
-                        <button class="btn" data-value="5">5 ★</button>
+                    <div class="item-to-rank">
+                        <p>Sıradaki Mob:</p>
+                        <h4 id="rankItemName">Yükleniyor...</h4>
+                        <p>Bu mob'u hangi sıraya koyacaksın?</p>
                     </div>
+                    <ul id="currentRankingList"></ul>
                 </div>
                 <div id="rank-results-screen" style="display: none;">
-                    <h3>İşte Senin Sıralaman!</h3>
-                    <ol id="rankedList"></ol>
+                    <h3>İşte Senin Efsanevi Sıralaman!</h3>
+                    <ol id="finalRankingList"></ol>
                     <button id="restartRankBtn" class="btn">Yeniden Başla</button>
                 </div>
             </div>
@@ -136,7 +141,6 @@
             </div>
         </div>
     </div>
-
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         // --- MOBİL MENÜ ---
@@ -151,8 +155,8 @@
 
         // --- SIRALAMA OYUNU KODLARI ---
         const rankItems = ["Creeper", "İskelet", "Zombi", "Enderman", "Köylü", "Demir Golem", "Kurt", "Domuz", "Arı", "Aksolotl"];
-        let shuffledRankItems = [];
-        let rankedResults = [];
+        let unrankedItems = [];
+        let rankedItems = [];
         let currentRankIndex = 0;
 
         const startRankBtn = document.getElementById('startRankBtn');
@@ -161,19 +165,18 @@
         const rankResultsScreen = document.getElementById('rank-results-screen');
         const rankCounterEl = document.getElementById('rankCounter');
         const rankItemNameEl = document.getElementById('rankItemName');
-        const ratingButtonsEl = document.getElementById('ratingButtons');
-        const rankedListEl = document.getElementById('rankedList');
+        const currentRankingListEl = document.getElementById('currentRankingList');
+        const finalRankingListEl = document.getElementById('finalRankingList');
         const restartRankBtn = document.getElementById('restartRankBtn');
 
         if(startRankBtn) {
             startRankBtn.addEventListener('click', startRankingGame);
             restartRankBtn.addEventListener('click', startRankingGame);
-            ratingButtonsEl.addEventListener('click', handleRating);
         }
 
         function startRankingGame() {
-            shuffledRankItems = [...rankItems].sort(() => Math.random() - 0.5);
-            rankedResults = [];
+            unrankedItems = [...rankItems].sort(() => Math.random() - 0.5);
+            rankedItems = [];
             currentRankIndex = 0;
             rankStartScreen.style.display = 'none';
             rankResultsScreen.style.display = 'none';
@@ -182,109 +185,99 @@
         }
 
         function displayNextRankItem() {
-            if (currentRankIndex < shuffledRankItems.length) {
-                rankCounterEl.innerText = `${currentRankIndex + 1} / ${shuffledRankItems.length}`;
-                rankItemNameEl.innerText = shuffledRankItems[currentRankIndex];
+            if (currentRankIndex < unrankedItems.length) {
+                const itemToRank = unrankedItems[currentRankIndex];
+                rankCounterEl.innerText = `Sıralanan: ${currentRankIndex + 1} / ${unrankedItems.length}`;
+                rankItemNameEl.innerText = itemToRank + "!";
+                
+                currentRankingListEl.innerHTML = '';
+                
+                // En başa yerleştir butonu
+                const topButtonLi = document.createElement('li');
+                const topButton = document.createElement('button');
+                topButton.textContent = '1. Sıraya Yerleştir';
+                topButton.className = 'rank-here-btn';
+                topButton.dataset.index = 0;
+                topButton.onclick = (e) => placeItem(e);
+                topButtonLi.appendChild(topButton);
+                currentRankingListEl.appendChild(topButtonLi);
+
+                // Sıralanmış elemanları ve aradaki butonları göster
+                rankedItems.forEach((item, index) => {
+                    const itemLi = document.createElement('li');
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'ranked-item';
+                    itemDiv.textContent = `${index + 1}. ${item}`;
+                    itemLi.appendChild(itemDiv);
+                    
+                    const buttonLi = document.createElement('li');
+                    const button = document.createElement('button');
+                    button.textContent = `${index + 2}. Sıraya Yerleştir`;
+                    button.className = 'rank-here-btn';
+                    button.dataset.index = index + 1;
+                    button.onclick = (e) => placeItem(e);
+                    buttonLi.appendChild(button);
+                    
+                    currentRankingListEl.appendChild(itemLi);
+                    currentRankingListEl.appendChild(buttonLi);
+                });
+
             } else {
-                displayRankResults();
+                displayFinalRankResults();
             }
         }
 
-        function handleRating(e) {
-            if (e.target.tagName === 'BUTTON' && e.target.dataset.value) {
-                const score = parseInt(e.target.dataset.value);
-                const item = shuffledRankItems[currentRankIndex];
-                rankedResults.push({ item, score });
-                currentRankIndex++;
-                displayNextRankItem();
-            }
+        function placeItem(event) {
+            const index = parseInt(event.target.dataset.index);
+            const itemToRank = unrankedItems[currentRankIndex];
+            rankedItems.splice(index, 0, itemToRank);
+            currentRankIndex++;
+            displayNextRankItem();
         }
 
-        function displayRankResults() {
+        function displayFinalRankResults() {
             rankMainScreen.style.display = 'none';
             rankResultsScreen.style.display = 'block';
-            rankedResults.sort((a, b) => b.score - a.score);
-            rankedListEl.innerHTML = '';
-            rankedResults.forEach(result => {
+            finalRankingListEl.innerHTML = '';
+            rankedItems.forEach((item, index) => {
                 const li = document.createElement('li');
-                li.textContent = `${result.item} - ${"★".repeat(result.score)}`;
-                rankedListEl.appendChild(li);
+                li.textContent = `${index + 1}. ${item}`;
+                finalRankingListEl.appendChild(li);
             });
         }
 
-        // --- TAHMİN OYUNU KODLARI ---
-        const guessItems = [
-            { name: "creeper", clues: ["Yeşil renklidir.", "Sessizce yaklaşır.", "Patlar!"] },
-            { name: "ghast", clues: ["Nether'da uçar.", "Ağlama sesi çıkarır.", "Ateş topu fırlatır."] },
-            { name: "shulker", clues: ["End şehirlerinde bulunur.", "Kabuğuna saklanır.", "Mermileri havaya yükseltir."] },
-            { name: "blaze", clues: ["Nether kalelerinde doğar.", "Havada döner.", "Blaze Çubuğu düşürür."] },
-            { name: "aksolotl", clues: ["Suda yaşar.", "Oyuncuya savaşta yardım eder.", "Ölü taklidi yapabilir."] }
-        ];
-        let shuffledGuessItems = [];
-        let currentGuessIndex = 0;
-
-        const startGuessBtn = document.getElementById('startGuessBtn');
-        const guessStartScreen = document.getElementById('guess-start-screen');
-        const guessMainScreen = document.getElementById('guess-main-screen');
-        const clueListEl = document.getElementById('clueList');
-        const guessInputEl = document.getElementById('guessInput');
-        const submitGuessBtn = document.getElementById('submitGuessBtn');
-        const guessResultEl = document.getElementById('guessResult');
-        const nextGuessBtn = document.getElementById('nextGuessBtn');
-        
-        if(startGuessBtn) {
+        // --- TAHMİN OYUNU KODLARI (DEĞİŞİKLİK YOK) ---
+        const guessItems = [ { name: "creeper", clues: ["Yeşil renklidir.", "Sessizce yaklaşır.", "Patlar!"] }, { name: "ghast", clues: ["Nether'da uçar.", "Ağlama sesi çıkarır.", "Ateş topu fırlatır."] }, { name: "shulker", clues: ["End şehirlerinde bulunur.", "Kabuğuna saklanır.", "Mermileri havaya yükseltir."] }, { name: "blaze", clues: ["Nether kalelerinde doğar.", "Havada döner.", "Blaze Çubuğu düşürür."] }, { name: "aksolotl", clues: ["Suda yaşar.", "Oyuncuya savaşta yardım eder.", "Ölü taklidi yapabilir."] } ];
+        let shuffledGuessItems = [], currentGuessIndex = 0;
+        const startGuessBtn = document.getElementById('startGuessBtn'), guessStartScreen = document.getElementById('guess-start-screen'), guessMainScreen = document.getElementById('guess-main-screen'), clueListEl = document.getElementById('clueList'), guessInputEl = document.getElementById('guessInput'), submitGuessBtn = document.getElementById('submitGuessBtn'), guessResultEl = document.getElementById('guessResult'), nextGuessBtn = document.getElementById('nextGuessBtn');
+        if(startGuessBtn){
             startGuessBtn.addEventListener('click', startGuessingGame);
             submitGuessBtn.addEventListener('click', checkGuess);
             nextGuessBtn.addEventListener('click', nextGuess);
         }
-
         function startGuessingGame() {
-            shuffledGuessItems = [...guessItems].sort(() => Math.random() - 0.5);
-            currentGuessIndex = 0;
-            guessStartScreen.style.display = 'none';
-            guessMainScreen.style.display = 'block';
+            shuffledGuessItems = [...guessItems].sort(() => Math.random() - 0.5); currentGuessIndex = 0;
+            guessStartScreen.style.display = 'none'; guessMainScreen.style.display = 'block';
             displayNextGuessItem();
         }
-
         function displayNextGuessItem() {
             const item = shuffledGuessItems[currentGuessIndex];
-            clueListEl.innerHTML = '';
-            item.clues.forEach(clue => {
-                const li = document.createElement('li');
-                li.textContent = clue;
-                clueListEl.appendChild(li);
-            });
-            guessInputEl.value = '';
-            guessResultEl.textContent = '';
-            guessInputEl.disabled = false;
-            submitGuessBtn.style.display = 'inline-block';
-            nextGuessBtn.style.display = 'none';
+            clueListEl.innerHTML = ''; item.clues.forEach(clue => { const li = document.createElement('li'); li.textContent = clue; clueListEl.appendChild(li); });
+            guessInputEl.value = ''; guessResultEl.textContent = ''; guessInputEl.disabled = false;
+            submitGuessBtn.style.display = 'inline-block'; nextGuessBtn.style.display = 'none';
         }
-
         function checkGuess() {
             const currentItem = shuffledGuessItems[currentGuessIndex];
             const userGuess = guessInputEl.value.trim().toLowerCase();
-
             if (userGuess === currentItem.name) {
-                guessResultEl.textContent = "Doğru Bildin! Harikasın!";
-                guessResultEl.className = 'result-correct';
-                guessInputEl.disabled = true;
-                submitGuessBtn.style.display = 'none';
-                if (currentGuessIndex < shuffledGuessItems.length - 1) {
-                    nextGuessBtn.style.display = 'inline-block';
-                } else {
-                    guessResultEl.textContent = "Tebrikler! Tüm mob'ları bildin!";
-                }
+                guessResultEl.textContent = "Doğru Bildin! Harikasın!"; guessResultEl.className = 'result-correct';
+                guessInputEl.disabled = true; submitGuessBtn.style.display = 'none';
+                if (currentGuessIndex < shuffledGuessItems.length - 1) { nextGuessBtn.style.display = 'inline-block'; } else { guessResultEl.textContent = "Tebrikler! Tüm mob'ları bildin!"; }
             } else {
-                guessResultEl.textContent = "Yanlış! Tekrar dene...";
-                guessResultEl.className = 'result-incorrect';
+                guessResultEl.textContent = "Yanlış! Tekrar dene..."; guessResultEl.className = 'result-incorrect';
             }
         }
-        
-        function nextGuess() {
-            currentGuessIndex++;
-            displayNextGuessItem();
-        }
+        function nextGuess() { currentGuessIndex++; displayNextGuessItem(); }
     });
     </script>
 </body>
