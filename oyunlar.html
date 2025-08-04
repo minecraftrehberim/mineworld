@@ -22,32 +22,58 @@
         }
         html { scroll-behavior: smooth; }
         body { font-family: 'Inter', sans-serif; background-color: var(--background-dark); color: var(--text-light); line-height: 1.8; margin: 0; padding: 0; }
-        /* Diğer sayfalardaki temel stiller buraya da eklendi */
-        .game-container {
-            background: var(--background-light);
-            color: var(--text-dark);
-            padding: 2rem;
-            border-radius: 8px;
-            border-top: 4px solid var(--primary-green);
-        }
-        .game-container h3 { font-size: 1.5rem; }
-        .rating-buttons { display: flex; gap: 1rem; justify-content: center; margin: 1rem 0; }
-        .rating-buttons button { font-size: 1.5rem; }
-        #guessInput { width: 100%; padding: 0.5rem; font-size: 1rem; }
-        #guessResult { margin-top: 1rem; font-weight: bold; }
+        .disclaimer-banner { background-color: #ffc107; color: #000; text-align: center; padding: 10px; font-size: 0.9rem; font-weight: bold; }
+        header { background-color: var(--primary-green); background-image: linear-gradient(to bottom, #7DB86A, var(--primary-green)); color: white; padding: 2.5rem 1.5rem; text-align: center; border-bottom: 12px solid var(--dark-soil); text-shadow: 3px 3px 5px rgba(0,0,0,0.5); position: relative; }
+        header h1 { font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 4rem; margin: 0; letter-spacing: 2px; }
+        .nav-wrapper { background: var(--dark-stone); padding: 0.5rem 1rem; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 8px rgba(0,0,0,0.3); display: flex; justify-content: center; align-items: center; flex-wrap: wrap; }
+        nav a { font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; color: white; text-decoration: none; padding: 1rem 1.2rem; transition: color 0.2s; font-size: 1rem; display: inline-block; }
+        nav a:hover { color: var(--diamond-blue); }
+        .container { width: 90%; max-width: 900px; margin: auto; padding: 2.5rem 0; }
+        .section { padding-top: 70px; margin-top: -70px; margin-bottom: 3rem; }
+        .section-title { font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 2.8rem; color: var(--diamond-blue); text-align: center; margin-bottom: 2.5rem; display: flex; align-items: center; justify-content: center; }
+        .section-title::before { content: ''; display: inline-block; width: 18px; height: 18px; background-color: var(--diamond-blue); margin-right: 15px; transform: rotate(45deg); }
+        .game-container { background: var(--background-light); color: var(--text-dark); border-radius: 8px; padding: 2rem; border-top: 4px solid var(--primary-green); text-align: center; }
+        .game-container h3 { font-size: 1.8rem; color: var(--lapis-blue); }
+        .btn { font-family: 'M PLUS Rounded 1c', sans-serif; font-weight: 800; font-size: 1.1rem; padding: 0.8rem 1.5rem; border: none; border-radius: 5px; background-color: var(--primary-green); color: white; cursor: pointer; transition: background-color 0.2s; }
+        .btn:hover { background-color: #4a7a3a; }
+        .rating-buttons { display: flex; gap: 1rem; justify-content: center; margin: 1.5rem 0; }
+        .rating-buttons button { background-color: var(--stone-gray); font-size: 1.2rem; }
+        #rankItemName { font-size: 2rem; color: var(--lapis-blue); font-weight: bold; margin: 1rem 0; }
+        #rankedList { list-style-position: inside; text-align: left; font-size: 1.2rem; }
+        #clueList { list-style-type: none; padding-left: 0; margin: 1.5rem 0; }
+        #clueList li { background-color: #f0f0f0; padding: 0.5rem; border-radius: 4px; margin-bottom: 0.5rem; }
+        #guessInput { width: 80%; padding: 0.8rem; font-size: 1.1rem; margin-bottom: 1rem; border-radius: 5px; border: 2px solid #ccc; }
+        #guessResult { margin-top: 1rem; font-weight: bold; font-size: 1.2rem; min-height: 25px; }
+        .result-correct { color: var(--primary-green); }
+        .result-incorrect { color: #dc143c; }
     </style>
 </head>
 <body>
+    <div class="disclaimer-banner">Bu site Mojang ya da Microsoft ile resmi olarak bağlantılı değildir. Minecraft, Mojang Studios’un tescilli markasıdır.</div>
+    <header>
+        <h1>MineWorld</h1>
+        <p>Kapsamlı Minecraft Rehberi</p>
+    </header>
+    <div class="nav-wrapper">
+        <nav>
+            <a href="index.html">Ana Sayfa</a>
+            <a href="yenilikler.html">Rehberler</a>
+            <a href="guncellemeler.html">Biyomlar ve Test</a>
+            <a href="oyunlar.html">Oyunlar</a>
+            <a href="index.html#yorumlar">Yorumlar</a>
+        </nav>
+    </div>
     <div class="container">
         <div id="ranking-game" class="section">
             <h2 class="section-title">Sıralama Oyunu</h2>
             <div class="game-container">
                 <div id="rank-start-screen">
                     <h3>Minecraft Mob Sıralaması</h3>
-                    <p>Karşına rastgele mob'lar gelecek. Onları ne kadar sevdiğine göre 1 (en az) ile 5 (en çok) arasında puanla. Sonda kendi kişisel sıralamanı gör!</p>
+                    <p>Karşına rastgele 10 mob gelecek. Onları ne kadar sevdiğine göre 1 (en az) ile 5 (en çok) arasında puanla. Sonda kendi kişisel sıralamanı gör!</p>
                     <button id="startRankBtn" class="btn">Sıralamaya Başla</button>
                 </div>
                 <div id="rank-main-screen" style="display: none;">
+                    <p id="rankCounter"></p>
                     <h3 id="rankItemName"></h3>
                     <div class="rating-buttons" id="ratingButtons">
                         <button class="btn" data-value="1">1 ★</button>
@@ -64,7 +90,6 @@
                 </div>
             </div>
         </div>
-
         <div id="guessing-game" class="section">
             <h2 class="section-title">Tahmin Oyunu</h2>
             <div class="game-container">
@@ -84,21 +109,73 @@
             </div>
         </div>
     </div>
-
     <script>
-        // Sıralama Oyunu Script'i
-        const rankItems = ["Creeper", "İskelet", "Zombi", "Enderman", "Köylü", "Demir Golem", "Kurt", "Domuz", "Koyun", "İnek"];
-        let rankedResults = [];
-        let currentRankIndex = 0;
-        // ... (diğer sıralama oyunu kodları)
-
-        // Tahmin Oyunu Script'i
-        const guessItems = [
-            { name: "Creeper", clues: ["Yeşil renklidir.", "Sessizce yaklaşır.", "Patlar!"] },
-            { name: "Ghast", clues: ["Nether'da uçar.", "Ağlama sesi çıkarır.", "Ateş topu fırlatır."] },
-            // ... (diğer tahmin oyunu kodları)
-        ];
-        // ... (diğer tahmin oyunu script'leri)
+    document.addEventListener('DOMContentLoaded', function() {
+        const rankItems = ["Creeper", "İskelet", "Zombi", "Enderman", "Köylü", "Demir Golem", "Kurt", "Domuz", "Arı", "Aksolotl"];
+        let shuffledRankItems = [], rankedResults = [], currentRankIndex = 0;
+        const startRankBtn = document.getElementById('startRankBtn'), rankStartScreen = document.getElementById('rank-start-screen'), rankMainScreen = document.getElementById('rank-main-screen'), rankResultsScreen = document.getElementById('rank-results-screen'), rankCounterEl = document.getElementById('rankCounter'), rankItemNameEl = document.getElementById('rankItemName'), ratingButtonsEl = document.getElementById('ratingButtons'), rankedListEl = document.getElementById('rankedList'), restartRankBtn = document.getElementById('restartRankBtn');
+        startRankBtn.addEventListener('click', startRankingGame);
+        restartRankBtn.addEventListener('click', startRankingGame);
+        ratingButtonsEl.addEventListener('click', handleRating);
+        function startRankingGame() {
+            shuffledRankItems = [...rankItems].sort(() => Math.random() - 0.5); rankedResults = []; currentRankIndex = 0;
+            rankStartScreen.style.display = 'none'; rankResultsScreen.style.display = 'none'; rankMainScreen.style.display = 'block';
+            displayNextRankItem();
+        }
+        function displayNextRankItem() {
+            if (currentRankIndex < shuffledRankItems.length) {
+                rankCounterEl.innerText = `${currentRankIndex + 1} / ${shuffledRankItems.length}`;
+                rankItemNameEl.innerText = shuffledRankItems[currentRankIndex];
+            } else { displayRankResults(); }
+        }
+        function handleRating(e) {
+            if (e.target.tagName === 'BUTTON') {
+                const score = parseInt(e.target.dataset.value);
+                const item = shuffledRankItems[currentRankIndex];
+                rankedResults.push({ item, score }); currentRankIndex++;
+                displayNextRankItem();
+            }
+        }
+        function displayRankResults() {
+            rankMainScreen.style.display = 'none'; rankResultsScreen.style.display = 'block';
+            rankedResults.sort((a, b) => b.score - a.score);
+            rankedListEl.innerHTML = '';
+            rankedResults.forEach(result => {
+                const li = document.createElement('li');
+                li.textContent = `${result.item} - ${"★".repeat(result.score)}`;
+                rankedListEl.appendChild(li);
+            });
+        }
+        const guessItems = [ { name: "creeper", clues: ["Yeşil renklidir.", "Sessizce yaklaşır.", "Patlar!"] }, { name: "ghast", clues: ["Nether'da uçar.", "Ağlama sesi çıkarır.", "Ateş topu fırlatır."] }, { name: "shulker", clues: ["End şehirlerinde bulunur.", "Kabuğuna saklanır.", "Mermileri havaya yükseltir."] }, { name: "blaze", clues: ["Nether kalelerinde doğar.", "Havada döner.", "Blaze Çubuğu düşürür."] }, { name: "aksolotl", clues: ["Suda yaşar.", "Oyuncuya savaşta yardım eder.", "Ölü taklidi yapabilir."] } ];
+        let shuffledGuessItems = [], currentGuessIndex = 0;
+        const startGuessBtn = document.getElementById('startGuessBtn'), guessStartScreen = document.getElementById('guess-start-screen'), guessMainScreen = document.getElementById('guess-main-screen'), clueListEl = document.getElementById('clueList'), guessInputEl = document.getElementById('guessInput'), submitGuessBtn = document.getElementById('submitGuessBtn'), guessResultEl = document.getElementById('guessResult'), nextGuessBtn = document.getElementById('nextGuessBtn');
+        startGuessBtn.addEventListener('click', startGuessingGame);
+        submitGuessBtn.addEventListener('click', checkGuess);
+        nextGuessBtn.addEventListener('click', nextGuess);
+        function startGuessingGame() {
+            shuffledGuessItems = [...guessItems].sort(() => Math.random() - 0.5); currentGuessIndex = 0;
+            guessStartScreen.style.display = 'none'; guessMainScreen.style.display = 'block';
+            displayNextGuessItem();
+        }
+        function displayNextGuessItem() {
+            const item = shuffledGuessItems[currentGuessIndex];
+            clueListEl.innerHTML = ''; item.clues.forEach(clue => { const li = document.createElement('li'); li.textContent = clue; clueListEl.appendChild(li); });
+            guessInputEl.value = ''; guessResultEl.textContent = ''; guessInputEl.disabled = false;
+            submitGuessBtn.style.display = 'inline-block'; nextGuessBtn.style.display = 'none';
+        }
+        function checkGuess() {
+            const currentItem = shuffledGuessItems[currentGuessIndex];
+            const userGuess = guessInputEl.value.trim().toLowerCase();
+            if (userGuess === currentItem.name) {
+                guessResultEl.textContent = "Doğru Bildin! Harikasın!"; guessResultEl.className = 'result-correct';
+                guessInputEl.disabled = true; submitGuessBtn.style.display = 'none';
+                if (currentGuessIndex < shuffledGuessItems.length - 1) { nextGuessBtn.style.display = 'inline-block'; } else { guessResultEl.textContent = "Tebrikler! Tüm mob'ları bildin!"; }
+            } else {
+                guessResultEl.textContent = "Yanlış! Tekrar dene..."; guessResultEl.className = 'result-incorrect';
+            }
+        }
+        function nextGuess() { currentGuessIndex++; displayNextGuessItem(); }
+    });
     </script>
 </body>
 </html>
